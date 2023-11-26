@@ -42,14 +42,14 @@ go version go1.21.4 windows/amd64
 - cdnjs - another great CDN with lots of externally hosted javascript and css resources: [link](https://cdnjs.com/)
 - The Mozilla Developer Network's documentation for Cascading Style Sheets (CSS) : [link](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-
-
-
-
-
-
 ## Section: Overview of the Go Language
+
 ### A note about the terminal on Windows: Git Bash
+- Powershell can also do it all, if you don't want another tool basically doing the same
+
+
+
+
 ### Variables & Functions
 ### Pointers
 ### Types and Structs
