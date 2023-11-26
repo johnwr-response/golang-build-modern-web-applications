@@ -20,13 +20,20 @@
 - Incredibly concise and very, very easy to learn
 - Modern and web-aware from the conception
 
-
-
-
-
-
 ### Why use Go? - System Resources
 ### Installing Go, an IDE, and writing a simple program
+- Download Go [here](https://go.dev/dl/)
+- Check version in a terminal
+````shell
+PS c:\golang-build-modern-web-applications> go version
+go version go1.21.4 windows/amd64
+````
+- Download Visual Studio Code [here](https://code.visualstudio.com/Download) or use GoLand or similar IDE
+- Make sure you IDE has appropriate GO Extensions installed
+- Type Go: Install Update Tools in command window (<ctrl<>shift>P) and check all tools
+
+
+
 ### Getting help: How to ask questions
 ### Some Useful Resources
 
