@@ -47,10 +47,15 @@ go version go1.21.4 windows/amd64
 ### A note about the terminal on Windows: Git Bash
 - Powershell can also do it all, if you don't want another tool basically doing the same
 
-
-
-
 ### Variables & Functions
+- Every single go file starts with a package declaration
+- You can call this whatever you like but the conventions of idiomatic go states to use a main package
+- Every go program has to have at least one function named ``main``
+
+
+
+
+
 ### Pointers
 ### Types and Structs
 ### Receivers: Structs with functions
