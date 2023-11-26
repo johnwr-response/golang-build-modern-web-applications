@@ -9,9 +9,22 @@
 - Learn how to build a web application in Go
 - Learn how to deploy the app to a live server
 
-
-
 ### Why Go? Why not PHP, or Python, or Node.js, or whatever?
+- Compiles to a single binary file
+- No runtimes to worry about
+- Statically typed, so no surprises runtime
+- Object-oriented (sort of)
+- Concurrency out of the box
+- Cross-platform
+- Excellent package management & testing built-in
+- Incredibly concise and very, very easy to learn
+- Modern and web-aware from the conception
+
+
+
+
+
+
 ### Why use Go? - System Resources
 ### Installing Go, an IDE, and writing a simple program
 ### Getting help: How to ask questions
