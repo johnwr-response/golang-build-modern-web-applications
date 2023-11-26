@@ -52,11 +52,12 @@ go version go1.21.4 windows/amd64
 - You can call this whatever you like but the conventions of idiomatic go states to use a main package
 - Every go program has to have at least one function named ``main``
 
-
-
-
-
 ### Pointers
+- A pointer points to a specific location in memory and gives you a means to get that specific location
+- Use asterisks to define as a pointer
+- Put an ampersand in front a variable to pass a reference to that variable, a pointer if you will
+- You can change the value of a scoped variable by passing a reference (or pointer) to it to some other function
+
 ### Types and Structs
 ### Receivers: Structs with functions
 ### Other data structures: Maps and Slices
