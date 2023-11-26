@@ -32,10 +32,21 @@ go version go1.21.4 windows/amd64
 - Make sure you IDE has appropriate GO Extensions installed
 - Type Go: Install Update Tools in command window (<ctrl<>shift>P) and check all tools
 
-
-
 ### Getting help: How to ask questions
 ### Some Useful Resources
+
+- The Go Standard Library documentation: [link](https://pkg.go.dev/std)
+- GoDoc - a great place to find open source packages: [link](https://pkg.go.dev/)
+- The Mozilla Developer Network's JavaScript documentation: [link](https://developer.mozilla.org/en-US/docs/Web/javascript)
+- jsDelivr - a helpful content delivery network which hosts a lot of open source javascript and css packages: [link](https://www.jsdelivr.com/)
+- cdnjs - another great CDN with lots of externally hosted javascript and css resources: [link](https://cdnjs.com/)
+- The Mozilla Developer Network's documentation for Cascading Style Sheets (CSS) : [link](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+
+
+
+
+
 
 ## Section: Overview of the Go Language
 ### A note about the terminal on Windows: Git Bash
