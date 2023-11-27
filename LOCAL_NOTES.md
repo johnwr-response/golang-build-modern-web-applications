@@ -63,10 +63,13 @@ go version go1.21.4 windows/amd64
 - Declaring a func or variable with lowercase first letter, the func is only available within my package (protected)
 - Declaring a func or variable with uppercase first letter, the func is available outside my package (public)
 
-
-
-
 ### Receivers: Structs with functions
+- Structs can also have functions associated with them
+- A pointer is created to the struct in front of the function
+
+
+
+
 ### Other data structures: Maps and Slices
 ### Decision Structures
 ### Preview
