@@ -67,10 +67,21 @@ go version go1.21.4 windows/amd64
 - Structs can also have functions associated with them
 - A pointer is created to the struct in front of the function
 
-
-
-
 ### Other data structures: Maps and Slices
+- Create a map using the built-in make function
+- A map can store anything
+- Maps are extremely useful, very fast and are [**immutable**]. No need to pass as a pointer
+- Maps are ***NOT SORTED*** and randomized by design, you **always** need to lookup with a key!
+- In Golang, we almost never uses Arrays, instead we use Slices
+- Create a Slice by adding [] in front of the type
+- Add to the Slice by using the built-in append function
+- Slices are also extremely useful and can be sorted by using the built-in sort functions in packaged sort
+- Slices can also be defined using the shorthand syntax
+- Slices like arrays start counting at 0
+- A Slice can also store anything
+
+
+
 ### Decision Structures
 ### Preview
 ### Preview
