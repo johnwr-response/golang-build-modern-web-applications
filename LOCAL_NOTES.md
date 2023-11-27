@@ -59,6 +59,13 @@ go version go1.21.4 windows/amd64
 - You can change the value of a scoped variable by passing a reference (or pointer) to it to some other function
 
 ### Types and Structs
+- Scope and variable shadowing
+- Declaring a func or variable with lowercase first letter, the func is only available within my package (protected)
+- Declaring a func or variable with uppercase first letter, the func is available outside my package (public)
+
+
+
+
 ### Receivers: Structs with functions
 ### Other data structures: Maps and Slices
 ### Decision Structures
