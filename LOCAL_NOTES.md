@@ -83,13 +83,17 @@ go version go1.21.4 windows/amd64
 ### Decision Structures
 - In Go, remember that switch statements break
 
+### Loops and ranging over data
+- To make things as simple as possible in Go, you only essentially need a for loop
+- The blank identifier ("_") can also be used in loops
+- Go can range over "anything"
+- In Go, a string is actually a slice of bytes
+- Strings in Go are actually immutable, so when yiu update it actually creates a new one and destroys the old
 
 
 
 
-
-
-### Preview
+### Interfaces
 ### Preview
 ### Test quiz
 ### Packages
