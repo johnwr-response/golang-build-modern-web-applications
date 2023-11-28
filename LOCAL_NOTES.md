@@ -80,9 +80,15 @@ go version go1.21.4 windows/amd64
 - Slices like arrays start counting at 0
 - A Slice can also store anything
 
-
-
 ### Decision Structures
+- In Go, remember that switch statements break
+
+
+
+
+
+
+
 ### Preview
 ### Preview
 ### Test quiz
