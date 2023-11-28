@@ -98,10 +98,19 @@ go version go1.21.4 windows/amd64
 - In order for something to implement an interface, it must...
   - Implement the same functions as the interface in question
 
-
-
-
 ### Packages
+- Go Modules is the way we use packages
+  - Make sure you have [Enable Go modules integration] checked in settings of your IDE
+  - Create a go module:  
+    ```go mod init github.com/tsawler/myniceprogram```
+  - Create a new sub-folder in project folder  
+    ```md helpers```
+  - Create a new go file in the helpers folder
+    ```ni helpers/helpers.go -type file```
+
+
+
+
 ### Channels
 ### Reading and Writing JSON
 ### Writing Tests in Go
