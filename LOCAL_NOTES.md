@@ -124,13 +124,26 @@ go version go1.21.4 windows/amd64
 - Listening for the response of the channel
 
 ### Reading and Writing JSON
-
-
-
-
-
-
 ### Writing Tests in Go
+- Setup:
+  ``` powershell
+  go mod init github.com/someorg/helpers
+  ```
+- Go makes testing remarkably easy
+- In Go the tests themselves live right besides the code you are trying to test
+- Create the test file the same as the go file, only with [`_test`] added as a postfix
+- A test in Go is just a function with a name that starts with [`Test`]
+- There are two ways to create tests:
+  1. The manual way
+  2. The Table Test
+- To run tests simply execute the command: ```go test```
+- To run tests verbose simply execute the command: ```go test -v```
+- To run tests with coverage simply execute the command: ```go test -cover```
+- To run tests with coverage and get a report in html: ```go test -coverprofile=coverage.out && go tool cover -html=coverage.out```
+
+
+
+
 
 ## Section: Building a Basic Web Application 
 ## Section: Improved Routing & Middleware
