@@ -90,10 +90,13 @@ go version go1.21.4 windows/amd64
 - In Go, a string is actually a slice of bytes
 - Strings in Go are actually immutable, so when yiu update it actually creates a new one and destroys the old
 
-
-
-
 ### Interfaces
+- A receiver of pointer type is much faster and best practice
+- It's easier to test interfaces than concrete types
+
+
+
+
 ### Preview
 ### Test quiz
 ### Packages
