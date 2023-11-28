@@ -108,10 +108,22 @@ go version go1.21.4 windows/amd64
   - Create a new go file in the helpers folder
     ```ni helpers/helpers.go -type file```
 
-
-
-
 ### Channels
+- Setup:  
+  ``` powershell
+  go mod init github.com/someorg/helpers
+  md helpers
+  ni helpers/helpers.go -type file
+  ```
+- Channels are a means to sending information from one part of your program to another
+- Channels are unique to Go
+- Channels are made by calling the built-in make function
+- Remember it's best practise to close the channel when done with it!
+  - Use the defer keyword which tells Go that whatever comes after, execute it as soon as the current function is done
+- Sending as a concurrent operation by running this routine in its own Go Routine as Go Routines runs concurrently
+- Listening for the response of the channel
+
+
 ### Reading and Writing JSON
 ### Writing Tests in Go
 
