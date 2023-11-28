@@ -94,11 +94,13 @@ go version go1.21.4 windows/amd64
 - A receiver of pointer type is much faster and best practice
 - It's easier to test interfaces than concrete types
 
-
-
-
-### Preview
 ### Test quiz
+- In order for something to implement an interface, it must...
+  - Implement the same functions as the interface in question
+
+
+
+
 ### Packages
 ### Channels
 ### Reading and Writing JSON
