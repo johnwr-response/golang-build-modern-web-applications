@@ -145,17 +145,17 @@ go version go1.21.4 windows/amd64
 
 ### How web applications work: the request/response lifecycle
 ### Making a "Hello, World" web application
-
-### Making a "Hello, World" web application
 ### Making our application module-ready
 - Setup:
   ``` powershell
   go mod init myapp
   ```
 
-
-
-
+### Functions and handlers
+- In order for a function to respond to a request from a web browser it has to handle two parameters:
+  - A Response Writer
+  - A (pointer to a) Request
+- The convention in go is that the very first thing in a comment of a function is the function name
 
 
 
