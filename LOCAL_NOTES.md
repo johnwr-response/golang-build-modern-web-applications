@@ -141,11 +141,22 @@ go version go1.21.4 windows/amd64
 - To run tests with coverage simply execute the command: ```go test -cover```
 - To run tests with coverage and get a report in html: ```go test -coverprofile=coverage.out && go tool cover -html=coverage.out```
 
-
-
-
-
 ## Section: Building a Basic Web Application 
+
+### How web applications work: the request/response lifecycle
+### Making a "Hello, World" web application
+
+
+
+
+
+
+
+
+
+
+
+
 ## Section: Improved Routing & Middleware
 ## Section: State Management with Sessions 
 ## Section: Choosing a Project, and Working With Forms
