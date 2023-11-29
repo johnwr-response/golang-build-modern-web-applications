@@ -166,6 +166,21 @@ go version go1.21.4 windows/amd64
 ### Reorganizing our code, and adding some basic styling to pages
 - Note! Added Bootstrap 5
 
+### Enabling Go Modules and refactoring our code to use packages
+- When initializing a Go module, the name of a package should correspond to a git repository 
+- Setup:
+  ``` powershell
+  go mod init github.com/myorg/myapp
+  ```
+- Run:
+  ``` powershell
+  go run .\cmd\web\.
+  ```
+
+
+
+
+
 
 
 ## Section: Improved Routing & Middleware
