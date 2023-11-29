@@ -146,7 +146,12 @@ go version go1.21.4 windows/amd64
 ### How web applications work: the request/response lifecycle
 ### Making a "Hello, World" web application
 
-
+### Making a "Hello, World" web application
+### Making our application module-ready
+- Setup:
+  ``` powershell
+  go mod init myapp
+  ```
 
 
 
