@@ -158,8 +158,8 @@ go version go1.21.4 windows/amd64
 - The convention in go is that the very first thing in a comment of a function is the function name
 
 ### Error checking
-
-
+### Serving HTML Templates
+- Note! To enable **Emmet** on `tmpl` files, add it to **HTML** in ***Settings - Editor - File Types*** 
 
 
 
