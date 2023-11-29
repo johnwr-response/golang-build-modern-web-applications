@@ -160,6 +160,10 @@ go version go1.21.4 windows/amd64
 ### Error checking
 ### Serving HTML Templates
 - Note! To enable **Emmet** on `tmpl` files, add it to **HTML** in ***Settings - Editor - File Types*** 
+### A note for Windows Users
+- Use ```go run .``` to run multiple Go files at the same time
+
+
 
 
 
