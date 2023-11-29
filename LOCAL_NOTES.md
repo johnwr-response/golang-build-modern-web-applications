@@ -179,6 +179,9 @@ go version go1.21.4 windows/amd64
 ### Working with Layouts
 - Note! Consider using .gohtml as instead of .tmpl
 
+### Building a simple template cache
+
+
 
 
 
