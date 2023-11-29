@@ -157,6 +157,8 @@ go version go1.21.4 windows/amd64
   - A (pointer to a) Request
 - The convention in go is that the very first thing in a comment of a function is the function name
 
+### Error checking
+
 
 
 
