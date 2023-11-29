@@ -163,8 +163,8 @@ go version go1.21.4 windows/amd64
 ### A note for Windows Users
 - Use ```go run .``` to run multiple Go files at the same time
 
-
-
+### Reorganizing our code, and adding some basic styling to pages
+- Note! Added Bootstrap 5
 
 
 
