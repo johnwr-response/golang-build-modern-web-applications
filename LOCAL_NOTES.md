@@ -184,7 +184,7 @@ go version go1.21.4 windows/amd64
 ### A note about the next lectures
 ### Setting application wide configuration
 ### Why the application wide config is so useful
-
+### Optimizing our template cache by using an application config
 
 
 

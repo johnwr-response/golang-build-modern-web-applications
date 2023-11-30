@@ -9,7 +9,7 @@ import (
 	"net/http"
 )
 
-const portNumber = ":8080"
+const portNumber = ":8088"
 
 // main is the main application function
 func main() {
@@ -19,9 +19,20 @@ func main() {
 		log.Fatal("cannot create template cache")
 	}
 	app.TemplateCache = tc
-	http.HandleFunc("/", handlers.Home)
-	http.HandleFunc("/about", handlers.About)
+	app.UseCache = false
 
-	fmt.Println(fmt.Sprintf("Starting application on port: %s ", portNumber))
-	_ = http.ListenAndServe(portNumber, nil)
+	repo := handlers.NewRepo(&app)
+	handlers.NewHandlers(repo)
+
+	render.NewTemplates(&app)
+
+	http.HandleFunc("/", handlers.Repo.Home)
+	http.HandleFunc("/about", handlers.Repo.About)
+
+	fmt.Printf("Starting application on port: %s\n", portNumber)
+	err = http.ListenAndServe(portNumber, nil)
+	if err != nil {
+		fmt.Printf("Error starting server: %v\n", err)
+	}
+
 }

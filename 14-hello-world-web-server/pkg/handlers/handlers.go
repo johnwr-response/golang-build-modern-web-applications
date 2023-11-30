@@ -1,16 +1,31 @@
 package handlers
 
 import (
+	"github.com/myorg/myapp/pkg/config"
 	"github.com/myorg/myapp/pkg/render"
 	"net/http"
 )
 
+// Repo the repository used by the handlers
+var Repo *Repository
+
+// Repository is the repository type
+type Repository struct {
+	App *config.AppConfig
+}
+
+// NewRepo creates a new repository
+func NewRepo(a *config.AppConfig) *Repository { return &Repository{App: a} }
+
+// NewHandlers sets the repository for the handlers
+func NewHandlers(r *Repository) { Repo = r }
+
 // Home is the home page handler
-func Home(w http.ResponseWriter, _ *http.Request) {
+func (m *Repository) Home(w http.ResponseWriter, _ *http.Request) {
 	render.RenderingTemplate(w, "home.page.tmpl")
 }
 
 // About is the about page handler
-func About(w http.ResponseWriter, _ *http.Request) {
+func (m *Repository) About(w http.ResponseWriter, _ *http.Request) {
 	render.RenderingTemplate(w, "about.page.tmpl")
 }

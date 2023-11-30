@@ -2,35 +2,44 @@ package render
 
 import (
 	"bytes"
+	"github.com/myorg/myapp/pkg/config"
 	"html/template"
 	"log"
 	"net/http"
 	"path/filepath"
 )
 
+var app *config.AppConfig
+
+// NewTemplates sets the config for the template package
+func NewTemplates(a *config.AppConfig) {
+	app = a
+}
+
 // RenderingTemplate renders templates using html/template
 func RenderingTemplate(w http.ResponseWriter, tmpl string) {
-	// get the template cache from the app config
-	// create a template cache
-	tc, err := CreateTemplateCache()
-	if err != nil {
-		log.Fatal(err)
+
+	var tc map[string]*template.Template
+	if app.UseCache {
+		tc = app.TemplateCache
+	} else {
+		tc, _ = CreateTemplateCache()
 	}
+
+	// get the template cache from the app config
+	//tc := app.TemplateCache
 
 	// get requested template from cache
 	t, ok := tc[tmpl]
 	if !ok {
-		log.Fatal(err)
+		log.Fatal("Could not get template from template cache")
 	}
 
 	buf := new(bytes.Buffer)
-	err = t.Execute(buf, nil)
-	if err != nil {
-		log.Println(err)
-	}
+	_ = t.Execute(buf, nil)
 
 	// render the template
-	_, err = buf.WriteTo(w)
+	_, err := buf.WriteTo(w)
 	if err != nil {
 		log.Println(err)
 	}
