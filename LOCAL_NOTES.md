@@ -226,6 +226,7 @@ go version go1.21.4 windows/amd64
   go get github.com/alexedwards/scs/v2
   ```
 
+### Experimenting with sessions
 
 
 
