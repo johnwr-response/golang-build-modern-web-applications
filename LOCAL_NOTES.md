@@ -199,6 +199,17 @@ go version go1.21.4 windows/amd64
   go get github.com/bmizerany/pat
   ```
 
+### Using chi for routing
+- Chi - A lightweight, idiomatic and composable router for building Go HTTP services. [link](https://github.com/go-chi/chi)
+- Setup:
+  ```shell
+  go get -u github.com/go-chi/chi/v5
+  ```
+- It is good practice to tidy up after adding and/or removing modules:
+  ```shell
+  go mod tidy
+  ```
+
 
 
 
