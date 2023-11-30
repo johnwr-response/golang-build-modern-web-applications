@@ -217,14 +217,21 @@ go version go1.21.4 windows/amd64
   go get github.com/justinas/nosurf
   ```
 
-
-
-
-
-
-
-
 ## Section: State Management with Sessions 
+
+### Installing and setting up a sessions package
+- SCS - HTTP Session Management for Go. [link](https://github.com/alexedwards/scs)
+- Setup:
+  ```shell
+  go get github.com/alexedwards/scs/v2
+  ```
+
+
+
+
+
+
+
 ## Section: Choosing a Project, and Working With Forms
 ## Section: Javascript & CSS
 ## Section: Converting our HTML to Go Templates, and Creating Handlers
