@@ -188,6 +188,7 @@ go version go1.21.4 windows/amd64
 ### A note about the next lecture
 - VS Code will give a warning while Golang sometimes does not. This is warning about an `import cycle` which is deliberate in the next lecture.
 
+### Sharing data with templates
 
 
 
