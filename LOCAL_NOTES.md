@@ -255,7 +255,21 @@ go version go1.21.4 windows/amd64
   - Somewhere to store information (database)
   - A means of sending notifications (email/text)
 
-
+### Setting up our project
+- First copy the three folders from hello-world app: [`cmd`,`pkg`,`templates`]
+- Then setup:
+  ```shell
+  go mod init github.com/johnwr-response/golang-build-modern-web-applications/15-bookings
+  ```
+- Change import statements to reflect new module above in these files
+  - `./cmd/web/main.go`
+  - ``./pkg/handlers/handlers.go``
+  - ``./pkg/render/render.go``
+- Then tidy up and try running the application:
+  ```shell
+  go mod tidy
+  go run ./cmd/web/.
+  ```
 
 
 
