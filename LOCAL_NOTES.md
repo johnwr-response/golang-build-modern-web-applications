@@ -228,12 +228,39 @@ go version go1.21.4 windows/amd64
 
 ### Experimenting with sessions
 
-
-
-
-
-
 ## Section: Choosing a Project, and Working With Forms
+
+### What are we going to build?
+- Planning
+  - Deciding what to build
+  - Project Scope
+  - Key Functionality
+  - Requirements
+- This project is going to build
+  - A bookings and reservations website
+  - For a Bed & Breakfast with two rooms
+  - What more do we need to do?
+- Key Functionality
+  - Showcase the property
+  - Allow for booking a room for one or more nights
+  - Check a room's availability
+  - Book the room
+  - Notify guests, and notify property owner
+  - Have a back end that the owner logs into
+  - Review existing bookings
+  - Show a calendar of bookings
+  - Change or cancel a booking
+- What will we need
+  - An authentication system
+  - Somewhere to store information (database)
+  - A means of sending notifications (email/text)
+
+
+
+
+
+
+
 ## Section: Javascript & CSS
 ## Section: Converting our HTML to Go Templates, and Creating Handlers
 ## Section: Writing Tests
