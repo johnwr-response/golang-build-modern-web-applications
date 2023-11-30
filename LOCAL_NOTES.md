@@ -185,6 +185,11 @@ go version go1.21.4 windows/amd64
 ### Setting application wide configuration
 ### Why the application wide config is so useful
 ### Optimizing our template cache by using an application config
+### A note about the next lecture
+- VS Code will give a warning while Golang sometimes does not. This is warning about an `import cycle` which is deliberate in the next lecture.
+
+
+
 
 
 
