@@ -12,7 +12,6 @@ func routes(app *config.AppConfig) http.Handler {
 	mux := chi.NewRouter()
 
 	mux.Use(middleware.Recoverer)
-	mux.Use(WriteToConsole)
 	mux.Use(NoSurf)
 	mux.Use(SessionLoad)
 
@@ -22,6 +21,9 @@ func routes(app *config.AppConfig) http.Handler {
 	if !app.InProduction {
 		// This is just to make the git commit check to shut up and will be removed
 	}
+
+	fileServer := http.FileServer(http.Dir("./static/"))
+	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
 
 	return mux
 }

@@ -271,6 +271,11 @@ go version go1.21.4 windows/amd64
   go run ./cmd/web/.
   ```
 
+### Enabling static files
+
+
+
+
 
 
 
