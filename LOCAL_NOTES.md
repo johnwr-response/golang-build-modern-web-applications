@@ -181,8 +181,8 @@ go version go1.21.4 windows/amd64
 
 ### Building a simple template cache
 ### Building a more complex template cache
-
-
+### A note about the next lectures
+### Setting application wide configuration
 
 
 
