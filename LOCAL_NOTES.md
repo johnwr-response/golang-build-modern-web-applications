@@ -190,11 +190,18 @@ go version go1.21.4 windows/amd64
 
 ### Sharing data with templates
 
-
-
-
-
 ## Section: Improved Routing & Middleware
+
+### Using pat for routing
+- Pat - A Sinatra style pattern muxer for Go's net/http library [link](https://github.com/bmizerany/pat)
+- Setup:
+  ```shell
+  go get github.com/bmizerany/pat
+  ```
+
+
+
+
 ## Section: State Management with Sessions 
 ## Section: Choosing a Project, and Working With Forms
 ## Section: Javascript & CSS
