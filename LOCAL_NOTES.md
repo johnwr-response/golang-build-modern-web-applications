@@ -177,10 +177,10 @@ go version go1.21.4 windows/amd64
   go run .\cmd\web\.
   ```
 ### Working with Layouts
-- Note! Consider using .gohtml as instead of .tmpl
+- Note! Consider using `.gohtml` as instead of `.tmpl`
 
 ### Building a simple template cache
-
+### Building a more complex template cache
 
 
 
