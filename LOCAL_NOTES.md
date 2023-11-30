@@ -210,6 +210,17 @@ go version go1.21.4 windows/amd64
   go mod tidy
   ```
 
+### Developing our own middleware
+- Chi - HTTP package for Go that helps you prevent Cross-Site Request Forgery attacks. [link](https://github.com/justinas/nosurf)
+- Setup:
+  ```shell
+  go get github.com/justinas/nosurf
+  ```
+
+
+
+
+
 
 
 
