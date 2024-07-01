@@ -279,10 +279,12 @@ go version go1.21.4 windows/amd64
 ### Improving our form
 ### Creating the reservation page
 
-
-
-
 ## Section: Javascript & CSS
+### What is Javascript, and why should I care?
+
+
+
+
 ## Section: Converting our HTML to Go Templates, and Creating Handlers
 ## Section: Writing Tests
 ## Section: Improved Error Handling
