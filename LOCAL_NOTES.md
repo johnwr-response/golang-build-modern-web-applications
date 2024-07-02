@@ -292,6 +292,7 @@ go version go1.21.4 windows/amd64
   [GitHub](https://github.com/sweetalert2/sweetalert2)
 ### Implementing a Javascript module
 ### Adding custom alerts in our Javascript module
+### Using our Javascript module on the "Book Now" button
 
 
 
