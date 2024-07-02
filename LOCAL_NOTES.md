@@ -284,6 +284,9 @@ go version go1.21.4 windows/amd64
 ### Making a better date picker
 - Vanilla JS Datepicker - A vanilla JavaScript remake of bootstrap-datepicker for Bulma and other CSS frameworks
   [GitHub](https://github.com/mymth/vanillajs-datepicker)
+### Custom alerts using Notie
+- notie -  a clean and simple notification, input, and selection suite for javascript, with no dependencies
+  [GitHub](https://github.com/jaredreich/notie)
 
 
 
