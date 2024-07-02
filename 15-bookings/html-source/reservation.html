@@ -127,7 +127,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <script>
-            console.log("I am printing from javascript");
+            let attention = Prompt();
 
             // Example starter JavaScript for disabling form submissions if there are invalid fields
             (() => {
@@ -151,7 +151,8 @@
 
             document.getElementById('colorButton').addEventListener("click", function(){
                 // notify("This is my message", "warning")
-                notifyModal("Title", "<em>Hello World</em>", "success", "My Text for the Button");
+                // notifyModal("Title", "<em>Hello World</em>", "success", "My Text for the Button");
+                attention.success();
             });
 
             const elem = document.getElementById('reservation-dates');
@@ -173,6 +174,19 @@
                     icon: icon,
                     confirmButtonText: confirmButtonText
                 })
+            }
+
+            function Prompt() {
+                let toast = function() {
+                    console.log("clicked button and got toast")
+                }
+                let success = function() {
+                    console.log("clicked button and got success")
+                }
+                return {
+                    toast: toast,
+                    success: success,
+                }
             }
 
         </script>
