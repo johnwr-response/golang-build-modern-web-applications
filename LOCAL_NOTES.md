@@ -296,8 +296,16 @@ go version go1.21.4 windows/amd64
 ### What is CSS, and how does it work?
 - Remember: Order matters. Later overrides former.
 
-
 ## Section: Converting our HTML to Go Templates, and Creating Handlers
+### Converting our pages to Go templates
+
+
+
+
+
+
+
+
 ## Section: Writing Tests
 ## Section: Improved Error Handling
 ## Section: Persisting Data with PostgresSQL
