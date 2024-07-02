@@ -291,6 +291,7 @@ go version go1.21.4 windows/amd64
 - sweetalert2 - A beautiful, responsive, highly customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes. Zero dependencies.
   [GitHub](https://github.com/sweetalert2/sweetalert2)
 ### Implementing a Javascript module
+### Adding custom alerts in our Javascript module
 
 
 
