@@ -293,7 +293,8 @@ go version go1.21.4 windows/amd64
 ### Implementing a Javascript module
 ### Adding custom alerts in our Javascript module
 ### Using our Javascript module on the "Book Now" button
-
+### What is CSS, and how does it work?
+- Remember: Order matters. Later overrides former.
 
 
 ## Section: Converting our HTML to Go Templates, and Creating Handlers

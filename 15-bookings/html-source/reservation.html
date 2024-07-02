@@ -12,51 +12,29 @@
 <!--        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css">-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker-bs5.min.css">
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+        <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+
         <style>
-            .my-footer {
-                height: 5em;
-                background-color: #163b65;
-                margin-top: 1.5em;
-                padding: 1em;
-                color: white;
-                font-size: 80%;
-            }
-            .room-image {
-                max-width: 50%;
-            }
-            .notie-container {
-                box-shadow: none;
+            .btn-outline-secondary {
+                color: aqua;
+                border-color: #6c757d;
             }
 
-            .colored-toast.swal2-icon-success {
-                background-color: #a5dc86 !important;
+            p {
+
             }
-            .colored-toast.swal2-icon-error {
-                background-color: #f27474 !important;
+            .paraClass {
+                font-size: 3em;
             }
-            .colored-toast.swal2-icon-warning {
-                background-color: #f8bb86 !important;
+            .secondClass {
+                color: red;
             }
-            .colored-toast.swal2-icon-info {
-                background-color: #3fc3ee !important;
+            #lastPara {
+                text-decoration: underline;
             }
-            .colored-toast.swal2-icon-question {
-                background-color: #87adbd !important;
-            }
-            .colored-toast .swal2-title {
-                color: white;
-            }
-            .colored-toast .swal2-close {
-                color: white;
-            }
-            .colored-toast .swal2-html-container {
-                color: white;
-            }
-            /*.datepicker {*/
-            /*    z-index: 10000;*/
-            /*}*/
 
         </style>
+
 
     </head>
     
@@ -126,6 +104,9 @@
             <div class="row">
                 <div class="col">
                     <p id="myParagraph">This is some text</p>
+                    <p class="paraClass secondClass">This is some text</p>
+                    <p class="paraClass">This is some text</p>
+                    <p id="lastPara">This is some text</p>
                     <p>
                         <button id="colorButton" class="btn btn-outline-secondary">Click Me</button>
                     </p>
