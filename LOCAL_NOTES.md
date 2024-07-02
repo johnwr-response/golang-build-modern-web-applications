@@ -285,8 +285,11 @@ go version go1.21.4 windows/amd64
 - Vanilla JS Datepicker - A vanilla JavaScript remake of bootstrap-datepicker for Bulma and other CSS frameworks
   [GitHub](https://github.com/mymth/vanillajs-datepicker)
 ### Custom alerts using Notie
-- notie -  a clean and simple notification, input, and selection suite for javascript, with no dependencies
+- notie - a clean and simple notification, input, and selection suite for javascript, with no dependencies
   [GitHub](https://github.com/jaredreich/notie)
+### Creating modals with SweetAlert
+- sweetalert2 - A beautiful, responsive, highly customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes. Zero dependencies.
+  [GitHub](https://github.com/sweetalert2/sweetalert2)
 
 
 
