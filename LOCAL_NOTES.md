@@ -281,7 +281,9 @@ go version go1.21.4 windows/amd64
 
 ## Section: Javascript & CSS
 ### What is Javascript, and why should I care?
-
+### Making a better date picker
+- Vanilla JS Datepicker - A vanilla JavaScript remake of bootstrap-datepicker for Bulma and other CSS frameworks
+  [GitHub](https://github.com/mymth/vanillajs-datepicker)
 
 
 
