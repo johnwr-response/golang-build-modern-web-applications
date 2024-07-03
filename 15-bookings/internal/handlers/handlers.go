@@ -3,9 +3,9 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/pkg/config"
-	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/pkg/models"
-	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/pkg/render"
+	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/config"
+	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/models"
+	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/render"
 	"log"
 	"net/http"
 )

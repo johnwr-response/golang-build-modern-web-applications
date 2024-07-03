@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
-	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/pkg/config"
-	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/pkg/handlers"
+	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/config"
+	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/handlers"
 	"net/http"
 )
 
