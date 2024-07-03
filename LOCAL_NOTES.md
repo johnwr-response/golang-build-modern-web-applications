@@ -300,7 +300,7 @@ go version go1.21.4 windows/amd64
 ### Converting our pages to Go templates
 ### Creating handlers for our forms & adding CSRF Protection
 ### Creating a handler that return JSON
-
+### Sending & processing an AJAX request
 
 
 
