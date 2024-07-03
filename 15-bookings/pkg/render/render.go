@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/pkg/config"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/pkg/models"
+	"github.com/justinas/nosurf"
 	"html/template"
 	"log"
 	"net/http"
@@ -18,12 +19,13 @@ func NewTemplates(a *config.AppConfig) {
 }
 
 // AddDefaultData is
-func AddDefaultData(td *models.TemplateData) *models.TemplateData {
+func AddDefaultData(td *models.TemplateData, r *http.Request) *models.TemplateData {
+	td.CSRFToken = nosurf.Token(r)
 	return td
 }
 
 // RenderingTemplate renders templates using html/template
-func RenderingTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
+func RenderingTemplate(w http.ResponseWriter, r *http.Request, tmpl string, td *models.TemplateData) {
 
 	var tc map[string]*template.Template
 	if app.UseCache {
@@ -43,7 +45,7 @@ func RenderingTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateDa
 
 	buf := new(bytes.Buffer)
 
-	td = AddDefaultData(td)
+	td = AddDefaultData(td, r)
 
 	_ = t.Execute(buf, td)
 

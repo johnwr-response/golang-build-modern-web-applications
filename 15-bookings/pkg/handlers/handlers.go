@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"fmt"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/pkg/config"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/pkg/models"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/pkg/render"
@@ -26,7 +27,7 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	remoteIP := r.RemoteAddr
 	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
 
-	render.RenderingTemplate(w, "home.page.tmpl", &models.TemplateData{})
+	render.RenderingTemplate(w, r, "home.page.tmpl", &models.TemplateData{})
 }
 
 // About is the about page handler
@@ -38,32 +39,40 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	stringMap["remote_ip"] = remoteIP
 
 	// send the data to the template
-	render.RenderingTemplate(w, "about.page.tmpl", &models.TemplateData{
+	render.RenderingTemplate(w, r, "about.page.tmpl", &models.TemplateData{
 		StringMap: stringMap,
 	})
 }
 
 // Contact renders the make a contact page and displays a form
 func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
-	render.RenderingTemplate(w, "contact.page.tmpl", &models.TemplateData{})
+	render.RenderingTemplate(w, r, "contact.page.tmpl", &models.TemplateData{})
 }
 
 // Reservation renders the make a reservation page and displays a form
 func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
-	render.RenderingTemplate(w, "make-reservation.page.tmpl", &models.TemplateData{})
+	render.RenderingTemplate(w, r, "make-reservation.page.tmpl", &models.TemplateData{})
 }
 
-// Majors renders the generals-quarters room page
+// Generals renders the generals-quarters room page
 func (m *Repository) Generals(w http.ResponseWriter, r *http.Request) {
-	render.RenderingTemplate(w, "generals.page.tmpl", &models.TemplateData{})
+	render.RenderingTemplate(w, r, "generals.page.tmpl", &models.TemplateData{})
 }
 
 // Majors renders the majors-suite room page
 func (m *Repository) Majors(w http.ResponseWriter, r *http.Request) {
-	render.RenderingTemplate(w, "majors.page.tmpl", &models.TemplateData{})
+	render.RenderingTemplate(w, r, "majors.page.tmpl", &models.TemplateData{})
 }
 
 // Availability renders the search availability page
 func (m *Repository) Availability(w http.ResponseWriter, r *http.Request) {
-	render.RenderingTemplate(w, "search-availability.page.tmpl", &models.TemplateData{})
+	render.RenderingTemplate(w, r, "search-availability.page.tmpl", &models.TemplateData{})
+}
+
+// PostAvailability renders the search availability page
+func (m *Repository) PostAvailability(w http.ResponseWriter, r *http.Request) {
+	//start2 := r.FormValue("start") ?!?
+	start := r.Form.Get("start")
+	end := r.Form.Get("end")
+	w.Write([]byte(fmt.Sprintf("start date is %s and end date is %s", start, end)))
 }

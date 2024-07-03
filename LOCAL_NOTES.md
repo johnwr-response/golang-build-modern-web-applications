@@ -298,6 +298,7 @@ go version go1.21.4 windows/amd64
 
 ## Section: Converting our HTML to Go Templates, and Creating Handlers
 ### Converting our pages to Go templates
+### Creating handlers for our forms & adding CSRF Protection
 
 
 
