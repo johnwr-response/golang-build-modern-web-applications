@@ -310,7 +310,8 @@ go version go1.21.4 windows/amd64
 - goValidator - Package of validators and sanitizers for strings, numerics, slices and structs
   [GitHub](https://github.com/asaskevich/govalidator)
   `go get github.com/asaskevich/govalidator`
-
+### Displaying a response to user after posting form data
+- To avoid accidental submitting, we should always 303 redirect a post to a new page instead of just displaying a page.
 
 
 
