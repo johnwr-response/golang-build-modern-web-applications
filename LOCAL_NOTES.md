@@ -313,8 +313,11 @@ go version go1.21.4 windows/amd64
 ### Displaying a response to user after posting form data
 - To avoid accidental submitting, we should always 303 redirect a post to a new page instead of just displaying a page.
 ### Finishing up our response to user, and adding alerts
-
-
+### An aside: Alternate Templating Engines
+- We are using the built-in html template package in go which works fine
+- People coming from web development in other languages might find the syntax for templates are a little awkward
+- But there are other template engines out there, one of them being `Jet Template Engine for Go`
+  [GitHub](https://github.com/CloudyKit/jet)
 
 
 
