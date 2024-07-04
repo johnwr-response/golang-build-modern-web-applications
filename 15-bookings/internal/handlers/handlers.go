@@ -54,8 +54,12 @@ func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
 
 // Reservation renders the make a reservation page and displays a form
 func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
+	var emptyReservation models.Reservation
+	data := make(map[string]interface{})
+	data["reservation"] = emptyReservation
 	render.RenderingTemplate(w, r, "make-reservation.page.tmpl", &models.TemplateData{
 		Form: forms.New(nil),
+		Data: data,
 	})
 }
 
@@ -75,7 +79,8 @@ func (m *Repository) PostReservation(w http.ResponseWriter, r *http.Request) {
 	}
 
 	form := forms.New(r.PostForm)
-	form.Has("first_name", r)
+	form.Required("first_name", "last_name", "email")
+	form.MinLength("first_name", 3, r)
 	if !form.Valid() {
 		data := make(map[string]interface{})
 		data["reservation"] = reservation
@@ -108,7 +113,10 @@ func (m *Repository) PostAvailability(w http.ResponseWriter, r *http.Request) {
 	//start2 := r.FormValue("start") ?!?
 	start := r.Form.Get("start")
 	end := r.Form.Get("end")
-	w.Write([]byte(fmt.Sprintf("start date is %s and end date is %s", start, end)))
+	_, err := w.Write([]byte(fmt.Sprintf("start date is %s and end date is %s", start, end)))
+	if err != nil {
+		return
+	}
 }
 
 type jsonResponse struct {
@@ -127,5 +135,9 @@ func (m *Repository) AvailabilityJSON(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 	}
 	w.Header().Set("Content-Type", "application/json")
-	w.Write(out)
+	_, err = w.Write(out)
+	if err != nil {
+		return
+	}
+
 }
