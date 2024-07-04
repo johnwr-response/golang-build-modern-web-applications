@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/config"
+	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/forms"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/models"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/render"
 	"log"
@@ -53,7 +54,13 @@ func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
 
 // Reservation renders the make a reservation page and displays a form
 func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
-	render.RenderingTemplate(w, r, "make-reservation.page.tmpl", &models.TemplateData{})
+	render.RenderingTemplate(w, r, "make-reservation.page.tmpl", &models.TemplateData{
+		Form: forms.New(nil),
+	})
+}
+
+// PostReservation handles the posting of a reservation form
+func (m *Repository) PostReservation(w http.ResponseWriter, r *http.Request) {
 }
 
 // Generals renders the generals-quarters room page

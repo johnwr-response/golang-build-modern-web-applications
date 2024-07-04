@@ -26,6 +26,7 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Post("/search-availability-json", handlers.Repo.AvailabilityJSON)
 
 	mux.Get("/make-reservation", handlers.Repo.Reservation)
+	mux.Post("/make-reservation", handlers.Repo.PostReservation)
 
 	if !app.InProduction {
 		// This is just to make the git commit check to shut up and will be removed
