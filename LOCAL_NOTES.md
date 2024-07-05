@@ -319,10 +319,18 @@ go version go1.21.4 windows/amd64
 - But there are other template engines out there, one of them being `Jet Template Engine for Go`
   [GitHub](https://github.com/CloudyKit/jet)
 
-
-
-
 ## Section: Writing Tests
+### Writing tests for our main package
+- Syntax for running and verbose viewing test results in Powershell
+  `go test -v ./cmd/web/.`
+- Syntax for viewing coverage percent in Powershell
+  `go test -cover ./cmd/web/.`
+- Syntax for viewing full coverage report in Powershell
+  `(go test '-coverprofile=coverage.out' ./cmd/web/.) -and (go tool cover '-html=coverage.out')`
+
+
+
+
 ## Section: Improved Error Handling
 ## Section: Persisting Data with PostgresSQL
 ## Section: Designing the Database Structure
