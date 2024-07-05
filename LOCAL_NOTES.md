@@ -343,6 +343,15 @@ go version go1.21.4 windows/amd64
   `go test -cover ./internal/render/.`
 - Syntax for viewing full coverage report in Powershell
   `(go test '-coverprofile=coverage.out' ./internal/render/.) -and (go tool cover '-html=coverage.out')`
+### Getting test coverage
+- To add a command alias in Powershell, first open your profile editor
+  `ise $profile`
+- Then add the following to create an alias that displays coverage for the current folder
+    ``
+    // Set an alias for calling coverage tool on current folder
+    Function go_coverage {(go test '-coverprofile=coverage.out') -and (go tool cover '-html=coverage.out')}
+    Set-Alias -Name go-cov-curr-folder -Value go_coverage
+    ``
 
 
 
