@@ -360,6 +360,13 @@ No longer needed, the Go toolchain now does not include the tests when run. Thus
 ## Section: Improved Error Handling
 ### Centralizing our error handling to a helpers package
 ### Using our ClientError and ServerError helper functions
+### Updating our tests
+- Run tests in current directory including all subdirectories
+  `go test -v ./...`
+- Run tests for viewing coverage percent including all subdirectories
+  `go test -cover ./...`
+- Run tests for viewing full coverage report including all subdirectories
+  `(go test '-coverprofile=coverage.out' ./...) -and (go tool cover '-html=coverage.out')`
 
 
 
