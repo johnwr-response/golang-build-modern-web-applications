@@ -423,10 +423,22 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
   ORDER BY
     p.last_name, e.email_address;
   ````
-
-
-
 ## Section: Designing the Database Structure
+### Identifying database structure, and Entity Relationship Diagrams
+- Tables
+  - users : id, first_name, last_name, email, password, created_at, updated_at, access_level
+  - reservations : id, first_name, last_name, email, phone, start_date, end_date, room_id, created_at, updated_at
+  - rooms : id, room_name, created_at, updated_at
+  - room_restrictions : id, start_date, end_date, room_id, reservation_id, created_at, updated_at, restriction_id
+  - restrictions : id, restriction_name
+- Foreign keys
+  - reservations.room_id = rooms.id 
+  - room_restrictions.room_id = rooms.id 
+  - room_restrictions.reservation_id = reservations.id 
+  - room_restrictions.restriction_id = restrictions.id 
+
+
+
 ## Section: Connection our Application to the Database
 ## Section: Updating our Tests
 ## Section: Sending Mail using Go
