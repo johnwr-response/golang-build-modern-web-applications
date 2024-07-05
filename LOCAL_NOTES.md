@@ -359,6 +359,7 @@ No longer needed, the Go toolchain now does not include the tests when run. Thus
   `go run ./cmd/web/.`
 ## Section: Improved Error Handling
 ### Centralizing our error handling to a helpers package
+### Using our ClientError and ServerError helper functions
 
 
 
