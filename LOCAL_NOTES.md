@@ -327,6 +327,13 @@ go version go1.21.4 windows/amd64
   `go test -cover ./cmd/web/.`
 - Syntax for viewing full coverage report in Powershell
   `(go test '-coverprofile=coverage.out' ./cmd/web/.) -and (go tool cover '-html=coverage.out')`
+### Writing tests for our GET handlers
+- Syntax for running and verbose viewing test results for our handlers in Powershell
+  `go test -v ./internal/handlers/.`
+- Syntax for viewing coverage percent in Powershell
+  `go test -cover ./internal/handlers/.`
+- Syntax for viewing full coverage report in Powershell
+  `(go test '-coverprofile=coverage.out' ./internal/handlers/.) -and (go tool cover '-html=coverage.out')`
 
 
 
