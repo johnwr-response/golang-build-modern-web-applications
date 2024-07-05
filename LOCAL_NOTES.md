@@ -355,7 +355,7 @@ go version go1.21.4 windows/amd64
 ### Exercise: Writing tests for the Forms package
 ### Solution to writing tests for the Forms package
 ### Making running our application easier
-No longer needed, the Go toolchain now does not include the tests when run. Thus this will still suffice:  
+No longer needed, the Go toolchain now does not include the tests when run, thus this will still suffice:  
   `go run ./cmd/web/.`
 ## Section: Improved Error Handling
 ### Centralizing our error handling to a helpers package
