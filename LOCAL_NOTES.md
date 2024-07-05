@@ -334,6 +334,7 @@ go version go1.21.4 windows/amd64
   `go test -cover ./internal/handlers/.`
 - Syntax for viewing full coverage report in Powershell
   `(go test '-coverprofile=coverage.out' ./internal/handlers/.) -and (go tool cover '-html=coverage.out')`
+### Writing tests for our POST handlers
 
 
 
