@@ -347,14 +347,16 @@ go version go1.21.4 windows/amd64
 - To add a command alias in Powershell, first open your profile editor
   `ise $profile`
 - Then add the following to create an alias that displays coverage for the current folder
-    ``
+    ````
     // Set an alias for calling coverage tool on current folder
     Function go_coverage {(go test '-coverprofile=coverage.out') -and (go tool cover '-html=coverage.out')}
     Set-Alias -Name go-cov-curr-folder -Value go_coverage
-    ``
+    ````
 ### Exercise: Writing tests for the Forms package
 ### Solution to writing tests for the Forms package
-
+### Making running our application easier
+No longer needed, the Go toolchain now does not include the tests when run. Thus this will still suffice:  
+  `go run ./cmd/web/.`
 
 
 
