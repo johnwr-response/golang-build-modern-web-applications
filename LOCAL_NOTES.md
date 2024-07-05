@@ -352,6 +352,7 @@ go version go1.21.4 windows/amd64
     Function go_coverage {(go test '-coverprofile=coverage.out') -and (go tool cover '-html=coverage.out')}
     Set-Alias -Name go-cov-curr-folder -Value go_coverage
     ``
+### Exercise: Writing tests for the Forms package 
 
 
 
