@@ -381,6 +381,13 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
 ### Connecting to the database with DBeaver on Windows
 - [Adminer](http://localhost:8977/?pgsql=db&username=postgres)
 - [CloudBeaver](http://localhost:8978/#/)
+### Basic SQL syntax
+- Walkthrough of simple `CREATE` table command
+- Walkthrough of simple `SELECT` command with `WHERE` clause
+- Walkthrough of simple `INSERT` command
+- Walkthrough of simple `UPDATE` command with `WHERE` clause
+- Walkthrough of simple `DELETE` command with `WHERE` clause
+
 
 
 ## Section: Designing the Database Structure
