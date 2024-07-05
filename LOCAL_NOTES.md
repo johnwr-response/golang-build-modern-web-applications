@@ -357,10 +357,11 @@ go version go1.21.4 windows/amd64
 ### Making running our application easier
 No longer needed, the Go toolchain now does not include the tests when run. Thus this will still suffice:  
   `go run ./cmd/web/.`
-
-
-
 ## Section: Improved Error Handling
+### Centralizing our error handling to a helpers package
+
+
+
 ## Section: Persisting Data with PostgresSQL
 ## Section: Designing the Database Structure
 ## Section: Connection our Application to the Database
