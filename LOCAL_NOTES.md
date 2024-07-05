@@ -336,6 +336,13 @@ go version go1.21.4 windows/amd64
   `(go test '-coverprofile=coverage.out' ./internal/handlers/.) -and (go tool cover '-html=coverage.out')`
 ### Writing tests for our POST handlers
 ### Writing tests for our Render package
+### Writing tests for our Render package II
+- Syntax for running and verbose viewing test results for our handlers in Powershell
+  `go test -v ./internal/render/.`
+- Syntax for viewing coverage percent in Powershell
+  `go test -cover ./internal/render/.`
+- Syntax for viewing full coverage report in Powershell
+  `(go test '-coverprofile=coverage.out' ./internal/render/.) -and (go tool cover '-html=coverage.out')`
 
 
 
