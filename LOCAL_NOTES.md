@@ -377,7 +377,10 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
   docker-compose down
   ````
 - Postgres can be contacted on port 
-
+### Connecting to the database with DBeaver on a Mac
+### Connecting to the database with DBeaver on Windows
+- [Adminer](http://localhost:8977/?pgsql=db&username=postgres)
+- [CloudBeaver](http://localhost:8978/#/)
 
 
 ## Section: Designing the Database Structure
