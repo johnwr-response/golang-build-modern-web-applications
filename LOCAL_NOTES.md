@@ -368,9 +368,18 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
 - Run tests for viewing full coverage report including all subdirectories
   `(go test '-coverprofile=coverage.out' ./...) -and (go tool cover '-html=coverage.out')`
 
-
-
 ## Section: Persisting Data with PostgresSQL
+### Installing PostgresSQL
+- PostgresSql can be installed in many ways. As local binaries for one, but we will be using Docker.
+  ````
+  cd docker
+  docker-compose up -d
+  docker-compose down
+  ````
+- Postgres can be contacted on port 
+
+
+
 ## Section: Designing the Database Structure
 ## Section: Connection our Application to the Database
 ## Section: Updating our Tests
