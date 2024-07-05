@@ -382,11 +382,47 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
 - [Adminer](http://localhost:8977/?pgsql=db&username=postgres)
 - [CloudBeaver](http://localhost:8978/#/)
 ### Basic SQL syntax
-- Walkthrough of simple `CREATE` table command
+- Walkthrough of simple `CREATE table` command
 - Walkthrough of simple `SELECT` command with `WHERE` clause
 - Walkthrough of simple `INSERT` command
 - Walkthrough of simple `UPDATE` command with `WHERE` clause
 - Walkthrough of simple `DELETE` command with `WHERE` clause
+### More complex queries
+- Walkthrough of simple `DROP TABLE` table command
+- Adding sample data
+  ````
+  -- DROP TABLE public.people;
+  -- DROP TABLE public.emails;
+  -- DROP TABLE public.phones;
+  CREATE TABLE public.people(id serial NOT NULL, first_name varchar(255) NOT NULL, last_name varchar(255) NOT NULL);
+  CREATE TABLE public.emails(id serial NOT NULL, people_id int8 NOT NULL, email_address varchar(255) NOT NULL);
+  CREATE TABLE public.phones(id serial NOT NULL, people_id int8 NOT NULL, phone_number varchar(255) NOT NULL);
+  INSERT INTO public.people(first_name,last_name) VALUES('John', 'Smith');
+  INSERT INTO public.people(first_name,last_name) VALUES('Mary', 'Jones');
+  INSERT INTO public.emails(people_id,email_address) VALUES(1,'john@smith.ca');
+  INSERT INTO public.emails(people_id,email_address) VALUES(1,'john@gmail.com');
+  INSERT INTO public.emails(people_id,email_address) VALUES(2,'mary@jones.com');
+  INSERT INTO public.phones(people_id,phone_number) VALUES(1,'555-555-1234');
+  INSERT INTO public.phones(people_id,phone_number) VALUES(2,'555-555-4321');
+  ````
+- Selecting and joining data
+  ````
+  SELECT email_address FROM emails WHERE people_id = 1;
+  SELECT email_address FROM emails WHERE people_id = 2;
+  SELECT p.first_name, p.last_name, e.email_address FROM people p LEFT JOIN emails e ON (e.people_id = p.id);
+  SELECT p.first_name, p.last_name, e.email_address FROM people p LEFT JOIN emails e ON (e.people_id = p.id) WHERE p.people_id = 1;
+  SELECT p.first_name, p.last_name, e.email_address FROM people p LEFT JOIN emails e ON (e.people_id = p.id) WHERE p.first_name = 'John' and p.last_name = 'Smith';
+  SELECT 
+    p.first_name, p.last_name, e.email_address, p2.phone_number 
+  FROM 
+    people p 
+    LEFT JOIN emails e ON (e.people_id = p.id) 
+    LEFT JOIN phones p2 ON (p.id = p2.people_id) 
+  WHERE 
+    p.first_name = 'John' and p.last_name = 'Smith'
+  ORDER BY
+    p.last_name, e.email_address;
+  ````
 
 
 
