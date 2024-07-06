@@ -449,7 +449,17 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
   `soda migrate`
 - Revert migration:
   `soda migrate down`
-
+### Creating the rest of our database using migrations
+- Generate a migration for our reservation table
+  `soda generate fizz CreateReservationsTable`  
+- Generate a migration for our rooms table
+  `soda generate fizz CreateRoomsTable`  
+- Generate a migration for our restrictions table
+  `soda generate fizz CreateRestrictionsTable`  
+- Generate a migration for our room_restrictions table
+  `soda generate fizz CreateRoomRestrictionsTable`  
+- Remember to migrate in the end
+  `soda migrate`
 
 
 
