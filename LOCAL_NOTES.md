@@ -475,7 +475,12 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
   `soda generate fizz CreateUniqueIndexForUsersTable`
 - Generate a migration for indices in our room_restrictions table
   `soda generate fizz CreateIndicesOnRoomRestrictionsTable`
-
+### Solution to Exercise
+- Generate a migration for unique email field in our reservations table
+  `soda generate fizz AddFKAndIndeciesToReservationsTable`
+- Soda reset will run all down migrations and then all up migrations  
+  `soda reset`  
+  To do that you first have to stop all clients connected to the database
 
 
 
