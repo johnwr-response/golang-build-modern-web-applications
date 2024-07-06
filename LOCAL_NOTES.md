@@ -470,6 +470,11 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
 ### Setting up the rest of our foreign keys
 - Generate a migration for foreign keys in our reservation table
   `soda generate fizz CreateFKForRoomRestricionsTable`
+### Adding Indices & Exercise
+- Generate a migration for unique email field in our users table
+  `soda generate fizz CreateUniqueIndexForUsersTable`
+- Generate a migration for indices in our room_restrictions table
+  `soda generate fizz CreateIndicesOnRoomRestrictionsTable`
 
 
 
