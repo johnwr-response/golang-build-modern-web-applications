@@ -467,6 +467,9 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
   `soda migrate`
 - And revert if you like
   `soda migrate down`
+### Setting up the rest of our foreign keys
+- Generate a migration for foreign keys in our reservation table
+  `soda generate fizz CreateFKForRoomRestricionsTable`
 
 
 
