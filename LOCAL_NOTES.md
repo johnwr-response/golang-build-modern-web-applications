@@ -441,7 +441,14 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
 - Soda is part of the Buffalo framework (also called Pop)
 - To install:  
   `go install github.com/gobuffalo/pop/v6/soda@latest`
-
+### Creating the users table using migrations
+- Generate a migration for our users table
+  `soda generate fizz CreateUserTable`
+- Add content to up and down files for the migration
+- Run migration:
+  `soda migrate`
+- Revert migration:
+  `soda migrate down`
 
 
 
