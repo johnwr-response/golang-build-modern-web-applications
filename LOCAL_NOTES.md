@@ -436,6 +436,14 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
   - room_restrictions.room_id = rooms.id 
   - room_restrictions.reservation_id = reservations.id 
   - room_restrictions.restriction_id = restrictions.id 
+### Install Soda
+- Database Migrations - An intelligent means of managing the structure of our database 
+- Soda is part of the Buffalo framework (also called Pop)
+- To install:  
+  `go install github.com/gobuffalo/pop/v6/soda@latest`
+
+
+
 
 
 
