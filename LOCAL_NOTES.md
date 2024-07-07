@@ -501,7 +501,13 @@ INSERT INTO users(first_name,last_name) VALUES('Mary', 'Jones);
   go mod tidy
   go run main.go
   ```
-
+### Creating a Driver package
+- pgx - PostgresSQL driver and toolkit for Go
+  [GitHub](https://github.com/jackc/pgx)
+- Adding pgx to project  
+  ```go get github.com/jackc/pgx/v5```
+- NOTE! Also updating some outdated libraries at this point, then tidying up
+  ```go mod tidy```
 
 ## Section: Updating our Tests
 ## Section: Sending Mail using Go
