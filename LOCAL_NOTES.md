@@ -508,6 +508,11 @@ INSERT INTO users(first_name,last_name) VALUES('Mary', 'Jones);
   ```go get github.com/jackc/pgx/v5```
 - NOTE! Also updating some outdated libraries at this point, then tidying up
   ```go mod tidy```
+### Connecting to the database and adding the SQL connection to our Repository
+- NOTE! Also updating handlers on the side to handle errors when rendering templates
+
+
+
 
 ## Section: Updating our Tests
 ## Section: Sending Mail using Go
