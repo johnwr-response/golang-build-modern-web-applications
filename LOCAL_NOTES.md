@@ -510,6 +510,7 @@ INSERT INTO users(first_name,last_name) VALUES('Mary', 'Jones);
   ```go mod tidy```
 ### Connecting to the database and adding the SQL connection to our Repository
 - NOTE! Also updating handlers on the side to handle errors when rendering templates
+### Setting up models
 
 
 
