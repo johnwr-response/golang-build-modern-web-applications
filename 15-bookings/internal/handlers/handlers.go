@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/config"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/driver"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/forms"
@@ -176,7 +175,45 @@ func (m *Repository) PostAvailability(w http.ResponseWriter, r *http.Request) {
 	//start2 := r.FormValue("start") ?!?
 	start := r.Form.Get("start")
 	end := r.Form.Get("end")
-	_, err := w.Write([]byte(fmt.Sprintf("start date is %s and end date is %s", start, end)))
+	layout := "2006-01-02"
+	startDate, err := time.Parse(layout, start)
+	if err != nil {
+		helpers.ServerError(w, err)
+		return
+	}
+	endDate, err := time.Parse(layout, end)
+	if err != nil {
+		helpers.ServerError(w, err)
+		return
+	}
+
+	rooms, err := m.DB.SearchAvailabilityForAllRooms(startDate, endDate)
+	if err != nil {
+		helpers.ServerError(w, err)
+		return
+	}
+	//for _, i := range rooms {
+	//	m.App.InfoLog.Println("ROOM:", i.ID, i.RoomName)
+	//}
+	if len(rooms) == 0 {
+		//m.App.InfoLog.Println("No availability")
+		m.App.Session.Put(r.Context(), "error", "No rooms available")
+		http.Redirect(w, r, "/search-availability", http.StatusSeeOther)
+		return
+	}
+
+	data := make(map[string]interface{})
+	data["rooms"] = rooms
+
+	res := models.Reservation{
+		StartDate: startDate,
+		EndDate:   endDate,
+	}
+	m.App.Session.Put(r.Context(), "reservation", res)
+
+	err = render.Template(w, r, "choose-room.page.tmpl", &models.TemplateData{
+		Data: data,
+	})
 	if err != nil {
 		return
 	}
