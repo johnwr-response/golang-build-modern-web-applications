@@ -513,6 +513,10 @@ INSERT INTO users(first_name,last_name) VALUES('Mary', 'Jones);
 ### Setting up models
 ### Cleaning up our code
 - NOTE! Tests are now broken, will be handled later
+### A word about ORMs
+- Libraries like Gorm or upper/DB are fine, but they add a lot of unnecessary complexity
+- Most experienced GO developers tend to write raw sequel instead using go to remove that extra layer of complexity
+- The code is then faster, easier to maintain and not that difficult to write
 
 
 
