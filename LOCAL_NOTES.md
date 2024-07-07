@@ -511,6 +511,8 @@ INSERT INTO users(first_name,last_name) VALUES('Mary', 'Jones);
 ### Connecting to the database and adding the SQL connection to our Repository
 - NOTE! Also updating handlers on the side to handle errors when rendering templates
 ### Setting up models
+### Cleaning up our code
+- NOTE! Tests are now broken, will be handled later
 
 
 
