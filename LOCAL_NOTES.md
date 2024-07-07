@@ -211,7 +211,7 @@ go version go1.21.4 windows/amd64
   ```
 
 ### Developing our own middleware
-- Chi - HTTP package for Go that helps you prevent Cross-Site Request Forgery attacks. [link](https://github.com/justinas/nosurf)
+- noSurf - HTTP package for Go that helps you prevent Cross-Site Request Forgery attacks. [link](https://github.com/justinas/nosurf)
 - Setup:
   ```shell
   go get github.com/justinas/nosurf
@@ -481,10 +481,28 @@ No longer needed, the Go toolchain now does not include the tests when run, thus
 - Soda reset will run all down migrations and then all up migrations  
   `soda reset`  
   To do that you first have to stop all clients connected to the database
+## Section: Connecting our Application to the Database
+### How to connect a Go application to a database
+````
+CREATE DATABASE test_connect;
+CREATE TABLE users(id serial, first_name varchar, last_name varchar);
+INSERT INTO users(first_name,last_name) VALUES('John', 'Smith);
+INSERT INTO users(first_name,last_name) VALUES('Mary', 'Jones);
+````
+- Then setup:
+  ```shell
+  cd 16-test-connect
+  ni main.go -type file
+  go mod init github.com/johnwr-response/golang-build-modern-web-applications/16-test-connect
+  go get github.com/jackc/pgx/v5
+  ```
+- To run:
+  ```shell
+  go mod tidy
+  go run main.go
+  ```
 
 
-
-## Section: Connection our Application to the Database
 ## Section: Updating our Tests
 ## Section: Sending Mail using Go
 ## Section: Authentication
