@@ -517,6 +517,13 @@ INSERT INTO users(first_name,last_name) VALUES('Mary', 'Jones);
 - Libraries like Gorm or upper/DB are fine, but they add a lot of unnecessary complexity
 - Most experienced GO developers tend to write raw sequel instead using go to remove that extra layer of complexity
 - The code is then faster, easier to maintain and not that difficult to write
+### Setting up database functions: inserting a reservation
+- In GO, the standard reference datetime is set to:  
+  `Mon Jan 2 15:04:05 MST 2006 (MST is GMT-0700`  
+  Or put another (US) way to somehow make it easy to remember:  
+  `01/02 03:04:05PM '06 -0700`  
+  Or in ISO:  
+  `2006-01-02 15:04:05`
 
 
 
