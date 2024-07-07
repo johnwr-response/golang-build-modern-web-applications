@@ -524,6 +524,11 @@ INSERT INTO users(first_name,last_name) VALUES('Mary', 'Jones);
   `01/02 03:04:05PM '06 -0700`  
   Or in ISO:  
   `2006-01-02 15:04:05`
+### Testing our insert reservation function
+````
+INSERT INTO rooms(room_name, created_at, updated_at) VALUES('Generals Quarters', now(), now());
+INSERT INTO rooms(room_name, created_at, updated_at) VALUES('Majors Suite', now(), now());
+````
 
 
 
