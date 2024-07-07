@@ -533,6 +533,7 @@ INSERT INTO rooms(room_name, created_at, updated_at) VALUES('Majors Suite', now(
 ````
 INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Reservation', now(), now());
 ````
+### Searching for availability by room
 
 
 
