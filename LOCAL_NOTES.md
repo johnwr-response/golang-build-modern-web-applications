@@ -541,6 +541,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 - Generate a migration for removing NOT NULL on reservationID in room_restrictions table
   `soda generate fizz AddNotNullToReservationIDForRestrictions`
 ### Connecting our handlers to our new database functions
+### Connecting search availability to the make reservation page
 
 
 
