@@ -529,6 +529,10 @@ INSERT INTO users(first_name,last_name) VALUES('Mary', 'Jones);
 INSERT INTO rooms(room_name, created_at, updated_at) VALUES('Generals Quarters', now(), now());
 INSERT INTO rooms(room_name, created_at, updated_at) VALUES('Majors Suite', now(), now());
 ````
+### Inserting Room Restrictions
+````
+INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Reservation', now(), now());
+````
 
 
 
