@@ -542,6 +542,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
   `soda generate fizz AddNotNullToReservationIDForRestrictions`
 ### Connecting our handlers to our new database functions
 ### Connecting search availability to the make reservation page
+### Cleaning up our make reservation page and testing everything
 
 
 
