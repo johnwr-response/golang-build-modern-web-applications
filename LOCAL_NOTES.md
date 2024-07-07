@@ -534,6 +534,12 @@ INSERT INTO rooms(room_name, created_at, updated_at) VALUES('Majors Suite', now(
 INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Reservation', now(), now());
 ````
 ### Searching for availability by room
+### Searching for availability for all rooms
+````
+INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner Block', now(), now());
+````
+- Generate a migration for removing NOT NULL on reservationID in room_restrictions table
+  `soda generate fizz AddNotNullToReservationIDForRestrictions`
 
 
 
