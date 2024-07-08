@@ -544,6 +544,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Connecting search availability to the make reservation page
 ### Cleaning up our make reservation page and testing everything
 ### Cleaning up the reservation summary page and improving validation
+### Searching for availability by Room
 
 
 
