@@ -557,6 +557,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 
 ## Section: Updating our Tests
 ### Creating a test database repository
+### Updating our existing tests to handle sessions
 
 
 
