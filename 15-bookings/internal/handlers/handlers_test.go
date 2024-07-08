@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/models"
 	"log"
@@ -196,6 +197,86 @@ func TestRepository_PostReservation(t *testing.T) {
 	handler.ServeHTTP(rr, req)
 	if rr.Code != http.StatusSeeOther {
 		t.Errorf("PostReservation handler failed when trying to fail inserting reservation, returned wrong response code for validation of first_name in post body: got %v want %v", rr.Code, http.StatusSeeOther)
+	}
+}
+
+func TestRepository_AvailabilityJSON(t *testing.T) {
+	// first case is rooms are not available
+	reqBody := "start=2050-01-01"
+	reqBody = fmt.Sprintf("%s&%s", reqBody, "end=2050-01-02")
+	reqBody = fmt.Sprintf("%s&%s", reqBody, "room_id=1")
+	req, _ := http.NewRequest("POST", "/search-availability-json", strings.NewReader(reqBody))
+	ctx := getCtx(req)
+	req = req.WithContext(ctx)
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	rr := httptest.NewRecorder()
+	handler := http.HandlerFunc(Repo.AvailabilityJSON)
+	handler.ServeHTTP(rr, req)
+	var j jsonResponse
+	err := json.Unmarshal(rr.Body.Bytes(), &j)
+	t.Logf("rr.body : %v", rr.Body)
+	if err != nil {
+		t.Error("Failed to parse JSON")
+	}
+	if j.OK {
+		t.Error("Got availability when none expected in AvailabilityJSON")
+	}
+
+	// case rooms are available
+	reqBody = "start=2030-01-01"
+	reqBody = fmt.Sprintf("%s&%s", reqBody, "end=2030-01-02")
+	reqBody = fmt.Sprintf("%s&%s", reqBody, "room_id=1")
+	req, _ = http.NewRequest("POST", "/search-availability-json", strings.NewReader(reqBody))
+	ctx = getCtx(req)
+	req = req.WithContext(ctx)
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	rr = httptest.NewRecorder()
+	handler.ServeHTTP(rr, req)
+	j = jsonResponse{}
+	err = json.Unmarshal(rr.Body.Bytes(), &j)
+	t.Logf("rr.body : %v", rr.Body)
+	if err != nil {
+		t.Error("Failed to parse JSON")
+	}
+	if !j.OK {
+		t.Error("Got no availability when expected in AvailabilityJSON")
+	}
+
+	// no request body
+	req, _ = http.NewRequest("POST", "/search-availability-json", nil)
+	ctx = getCtx(req)
+	req = req.WithContext(ctx)
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	rr = httptest.NewRecorder()
+	handler.ServeHTTP(rr, req)
+	j = jsonResponse{}
+	err = json.Unmarshal(rr.Body.Bytes(), &j)
+	t.Logf("rr.body : %v", rr.Body)
+	if err != nil {
+		t.Error("Failed to parse JSON")
+	}
+	if j.OK || j.Message != "Internal server error" {
+		t.Error("Got availability when request body was empty")
+	}
+
+	// database error
+	reqBody = "start=2060-01-01"
+	reqBody = fmt.Sprintf("%s&%s", reqBody, "end=2060-01-02")
+	reqBody = fmt.Sprintf("%s&%s", reqBody, "room_id=1")
+	req, _ = http.NewRequest("POST", "/search-availability-json", strings.NewReader(reqBody))
+	ctx = getCtx(req)
+	req = req.WithContext(ctx)
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	rr = httptest.NewRecorder()
+	handler.ServeHTTP(rr, req)
+	j = jsonResponse{}
+	err = json.Unmarshal(rr.Body.Bytes(), &j)
+	t.Logf("rr.body : %v", rr.Body)
+	if err != nil {
+		t.Error("Failed to parse JSON")
+	}
+	if j.OK || j.Message != "Error connecting to database" {
+		t.Error("Got no availability when expected in AvailabilityJSON")
 	}
 
 }
