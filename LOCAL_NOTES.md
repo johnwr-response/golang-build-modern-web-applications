@@ -548,6 +548,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Providing feedback when searching by room, and connecting to the reservation page
 ### Connecting the rooms page to the make reservation page
 ### Connecting the Major's Suite page, and extracting our javascript module
+### Adding a migration for seeding rooms
+- Generate a migration for seeding rooms in our room table
+  `soda generate sql SeedRoomsTable`
 
 
 
