@@ -551,6 +551,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Adding a migration for seeding rooms
 - Generate a migration for seeding rooms in our room table
   `soda generate sql SeedRoomsTable`
+### Adding a migration for seeding restrictions
+- Generate a migration for seeding restrictions in our restrictions table
+  `soda generate sql SeedRestrictionsTable`
 
 
 
