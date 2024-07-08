@@ -558,6 +558,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ## Section: Updating our Tests
 ### Creating a test database repository
 ### Updating our existing tests to handle sessions
+### Improving our tests by handling multiple cases
+- Run tests for viewing full coverage report including all subdirectories
+  `(go test '-coverprofile=coverage.out' ./...) -and (go tool cover '-html=coverage.out')`
 
 
 
