@@ -561,6 +561,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Improving our tests by handling multiple cases
 - Run tests for viewing full coverage report including all subdirectories
   `(go test '-coverprofile=coverage.out' ./...) -and (go tool cover '-html=coverage.out')`
+### Testing Post handlers
+- Run tests for viewing full coverage report on handlers only
+  `(go test '-coverprofile=coverage.out' ./internal/handlers/.) -and (go tool cover '-html=coverage.out')`
 
 
 

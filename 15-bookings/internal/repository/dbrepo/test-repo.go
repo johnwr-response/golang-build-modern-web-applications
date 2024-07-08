@@ -12,11 +12,17 @@ func (m *testDBRepo) AllUsers() bool {
 
 // InsertReservation inserts a reservation into the database
 func (m *testDBRepo) InsertReservation(res models.Reservation) (int, error) {
+	if res.FirstName == "Invalid" {
+		return 0, errors.New("wrong first name")
+	}
 	return 1, nil
 }
 
 // InsertRoomRestriction inserts a room restriction into the database
 func (m *testDBRepo) InsertRoomRestriction(rr models.RoomRestriction) error {
+	if rr.RoomID == -1 {
+		return errors.New("wrong room id")
+	}
 	return nil
 }
 
