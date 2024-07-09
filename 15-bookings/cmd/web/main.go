@@ -13,6 +13,7 @@ import (
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/render"
 	"log"
 	"net/http"
+	"net/smtp"
 	"os"
 	"time"
 )
@@ -37,6 +38,13 @@ func main() {
 			log.Fatal(err)
 		}
 	}(db.SQL)
+
+	from := "me@here.com"
+	auth := smtp.PlainAuth("", from, "", "localhost")
+	err = smtp.SendMail("localhost:1025", auth, from, []string{"you@there.com"}, []byte("Hello, World!"))
+	if err != nil {
+		log.Println("smtp error:", err)
+	}
 
 	fmt.Printf("Starting application on port: %s\n", portNumber)
 

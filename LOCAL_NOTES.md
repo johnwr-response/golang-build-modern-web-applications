@@ -568,11 +568,12 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Completed Handler tests
 ### Simplifying adding post parameters
 
-
-
-
-
 ## Section: Sending Mail using Go
+### Sending email using the Standard Library
+
+
+
+
 ## Section: Authentication
 ## Section: Setting up Secure Backend Administration
 ## Section: Updating our Application to Accept Command Line Parameters
