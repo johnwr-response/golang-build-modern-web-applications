@@ -597,6 +597,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ## Section: Authentication
 ### Create the login screen
 ### Creating the authentication handlers for the login screen
+### Creating the authentication and user database functions
 
 
 
