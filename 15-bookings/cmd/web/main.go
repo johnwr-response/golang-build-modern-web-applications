@@ -13,7 +13,6 @@ import (
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/render"
 	"log"
 	"net/http"
-	"net/smtp"
 	"os"
 	"time"
 )
@@ -39,12 +38,18 @@ func main() {
 		}
 	}(db.SQL)
 
-	from := "me@here.com"
-	auth := smtp.PlainAuth("", from, "", "localhost")
-	err = smtp.SendMail("localhost:1025", auth, from, []string{"you@there.com"}, []byte("Hello, World!"))
-	if err != nil {
-		log.Println("smtp error:", err)
-	}
+	defer close(app.MailChan)
+
+	fmt.Println("Starting sendmail listener...")
+	listenForMail()
+
+	//msg := models.MailData{
+	//	To:      "john@doe.com",
+	//	From:    "me@here.com",
+	//	Subject: "Some subject",
+	//	Content: "",
+	//}
+	//app.MailChan <- msg
 
 	fmt.Printf("Starting application on port: %s\n", portNumber)
 
@@ -65,6 +70,10 @@ func run() (*driver.DB, error) {
 	gob.Register(models.Room{})
 	gob.Register(models.Restriction{})
 	gob.Register(models.RoomRestriction{})
+
+	// create channel for email
+	mailChan := make(chan models.MailData)
+	app.MailChan = mailChan
 
 	// change this to true when in production
 	app.InProduction = false

@@ -570,7 +570,11 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 
 ## Section: Sending Mail using Go
 ### Sending email using the Standard Library
-
+### Installing a mailer package and setting up a mail channel
+- Go Simple Mail - Golang package for send email. Support keep alive connection, TLS and SSL. Easy for bulk SMTP.
+  [GitHub](https://github.com/xhit/go-simple-mail)
+- Import into project
+  ```go get github.com/xhit/go-simple-mail/v2```
 
 
 
