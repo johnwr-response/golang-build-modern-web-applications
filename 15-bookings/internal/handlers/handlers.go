@@ -7,6 +7,7 @@ import (
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/config"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/driver"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/forms"
+	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/helpers"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/models"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/render"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/repository"
@@ -435,7 +436,18 @@ func (m *Repository) AdminNewReservations(w http.ResponseWriter, r *http.Request
 	_ = render.Template(w, r, "admin-new-reservations.page.tmpl", &models.TemplateData{})
 }
 func (m *Repository) AdminAllReservations(w http.ResponseWriter, r *http.Request) {
-	_ = render.Template(w, r, "admin-all-reservations.page.tmpl", &models.TemplateData{})
+	reservations, err := m.DB.AllReservations()
+	if err != nil {
+		//m.App.Session.Put(r.Context(), "error", "Can't get all reservations from db")
+		//http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
+		helpers.ServerError(w, err)
+		return
+	}
+	data := make(map[string]interface{})
+	data["reservations"] = reservations
+	_ = render.Template(w, r, "admin-all-reservations.page.tmpl", &models.TemplateData{
+		Data: data,
+	})
 }
 func (m *Repository) AdminReservationsCalendar(w http.ResponseWriter, r *http.Request) {
 	_ = render.Template(w, r, "admin-reservations-calendar.page.tmpl", &models.TemplateData{})

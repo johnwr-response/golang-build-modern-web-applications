@@ -616,6 +616,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Important: A note on the admin.layout.tmpl file
 ### Solution to creating admin templates
 ### Create stub handlers for admin functionality
+### Listing all reservations
+- Simple-DataTables - DataTables but in TypeScript transpiled to Vanilla JS. Lightweight, extendable and dependency free
+  [GitHub](https://github.com/fiduswriter/simple-datatables)
 
 
 
