@@ -623,6 +623,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 - Generate a migration for seeding rooms in our room table
   `soda generate fizz AddProcessedToReservationsTable`
 ### Showing one reservation
+### Database functions for editing a reservation
 
 
 
