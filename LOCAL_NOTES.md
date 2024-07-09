@@ -606,6 +606,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
   [The Go Playground](https://go.dev/play/p/uKMMCzJWGsW)
 ### Testing login
 ### Checking to see if a user is logged in, and logging a user out
+### Protecting our routes with authentication middleware
 
 
 ## Section: Setting up Secure Backend Administration
