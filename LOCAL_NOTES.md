@@ -604,6 +604,8 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Adding a user to the database
 - A simple hashed password generator for use when manually inserting users
   [The Go Playground](https://go.dev/play/p/uKMMCzJWGsW)
+### Testing login
+### Checking to see if a user is logged in, and logging a user out
 
 
 ## Section: Setting up Secure Backend Administration
