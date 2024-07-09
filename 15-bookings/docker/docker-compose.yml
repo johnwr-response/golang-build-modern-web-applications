@@ -20,13 +20,19 @@ services:
     volumes:
       - cloud-beaver:/opt/cloudbeaver/workspace
 
-
   adminer:
     image: adminer
     restart: unless-stopped
     ports:
       - 8977:8080
 
+  mailHog:
+    image: mailhog/mailhog
+    logging:
+      driver: 'none'  # disable saving logs
+    ports:
+      - 1025:1025 # smtp server
+      - 8025:8025 # web ui
 volumes:
   postgres-data:
   cloud-beaver:

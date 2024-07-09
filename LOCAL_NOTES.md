@@ -575,6 +575,18 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
   [GitHub](https://github.com/xhit/go-simple-mail)
 - Import into project
   ```go get github.com/xhit/go-simple-mail/v2```
+### Installing MailHog on a Mac for testing purposes
+### Installing MailHog on Windows for testing purposes
+### Actually using Docker
+- Starting and stopping mailHog
+  ````
+  cd docker
+  docker-compose up mailHog -d
+  docker-compose down mailHog 
+  ````
+- Usage:
+  - [Sendmail](`localhost:1025`)
+  - [Web interface](http://localhost:8025/ "MailHog web interface")
 
 
 
