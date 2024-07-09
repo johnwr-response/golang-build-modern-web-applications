@@ -592,6 +592,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Sending nicely formatted email using Foundation
 - Foundation for Emails 2 - Golang package for send email. Support keep alive connection, TLS and SSL. Easy for bulk SMTP.
   [Website](https://get.foundation/emails.html)
+### Updating our tests
+
+
 
 
 ## Section: Authentication
