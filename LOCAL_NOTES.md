@@ -589,7 +589,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
   - [Web interface](http://localhost:8025/ "MailHog web interface")
 ### Creating and sending mail notifications
 ### Solution to sending notification to property owner
-
+### Sending nicely formatted email using Foundation
+- Foundation for Emails 2 - Golang package for send email. Support keep alive connection, TLS and SSL. Easy for bulk SMTP.
+  [Website](https://get.foundation/emails.html)
 
 
 ## Section: Authentication
