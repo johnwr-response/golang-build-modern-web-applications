@@ -594,10 +594,12 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
   [Website](https://get.foundation/emails.html)
 ### Updating our tests
 
-
-
-
 ## Section: Authentication
+### Create the login screen
+
+
+
+
 ## Section: Setting up Secure Backend Administration
 ## Section: Updating our Application to Accept Command Line Parameters
 ## Section: Deploying our Application to a Server
