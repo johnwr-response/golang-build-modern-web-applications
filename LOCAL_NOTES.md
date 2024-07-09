@@ -608,8 +608,16 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Checking to see if a user is logged in, and logging a user out
 ### Protecting our routes with authentication middleware
 
-
 ## Section: Setting up Secure Backend Administration
+### Picking an admin template
+- RoyalUI-Free-Bootstrap-Admin-Template - Free Bootstrap 4 Admin Template
+  [GitHub](https://github.com/BootstrapDash/RoyalUI-Free-Bootstrap-Admin-Template)
+
+
+
+
+
+
 ## Section: Updating our Application to Accept Command Line Parameters
 ## Section: Deploying our Application to a Server
 ## Section: Finishing Touches
