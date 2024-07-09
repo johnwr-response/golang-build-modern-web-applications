@@ -28,9 +28,8 @@ func (m *testDBRepo) InsertRoomRestriction(rr models.RoomRestriction) error {
 }
 
 // SearchAvailabilityByDatesByRoomID returns true if availability exists for roomID, and false if no availability exists
-func (m *testDBRepo) SearchAvailabilityByDatesByRoomID(start, end time.Time, roomID int) (bool, error) {
+func (m *testDBRepo) SearchAvailabilityByDatesByRoomID(start, _ time.Time, _ int) (bool, error) {
 	// set up a test time
-	//log.Printf("Called SearchAvailabilityByDatesByRoomID(%v, %v, %v)", start, end, roomID)
 	layout := "2006-01-02"
 	str := "2049-12-31"
 	t, err := time.Parse(layout, str)
@@ -49,10 +48,7 @@ func (m *testDBRepo) SearchAvailabilityByDatesByRoomID(start, end time.Time, roo
 
 	// if the start date is after 2049-12-31, then return availability as false, indicating no availability
 	if start.After(t) {
-		//log.Printf("start = %v and is after t = %v", start, t)
 		return false, nil
-		//} else {
-		//	log.Printf("start = %v and is not after t = %v", start, t)
 	}
 
 	// otherwise, we have availability
@@ -94,7 +90,7 @@ func (m *testDBRepo) SearchAvailabilityForAllRooms(start, _ time.Time) ([]models
 // GetRoomByID gets a room by id
 func (m *testDBRepo) GetRoomByID(id int) (models.Room, error) {
 	var room models.Room
-	if id > 2 {
+	if id < 1 {
 		return room, errors.New("cannot get room by id")
 	}
 	return room, nil
