@@ -587,6 +587,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 - Usage:
   - [Sendmail](`localhost:1025`)
   - [Web interface](http://localhost:8025/ "MailHog web interface")
+### Creating and sending mail notifications
 
 
 

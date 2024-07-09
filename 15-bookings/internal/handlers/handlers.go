@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/config"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/driver"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/forms"
@@ -143,6 +144,21 @@ func (m *Repository) PostReservation(w http.ResponseWriter, r *http.Request) {
 	err = m.DB.InsertRoomRestriction(restriction)
 
 	m.App.Session.Put(r.Context(), "reservation", reservation)
+
+	// send notification to guest
+	dateFormat := "2006-01-02"
+	htmlMessage := fmt.Sprintf(`
+      <strong>Reservation Confirmation</strong><br>
+      Dear %v, <br>
+      This is a confirmation of your reservation from %v to %v.
+    `, reservation.FirstName, reservation.StartDate.Format(dateFormat), reservation.EndDate.Format(dateFormat))
+	msg := models.MailData{
+		To:      reservation.Email,
+		From:    "me@here.com",
+		Subject: "Reservation Confirmation",
+		Content: htmlMessage,
+	}
+	m.App.MailChan <- msg
 
 	http.Redirect(w, r, "/reservation-summary", http.StatusSeeOther)
 
