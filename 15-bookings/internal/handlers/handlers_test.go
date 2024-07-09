@@ -3,12 +3,12 @@ package handlers
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/driver"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/models"
 	"log"
 	"net/http"
 	"net/http/httptest"
+	"net/url"
 	"reflect"
 	"strings"
 	"testing"
@@ -106,13 +106,13 @@ func TestRepository_PostReservation(t *testing.T) {
 		EndDate:   ed,
 	}
 
-	reqBody := "first_name=John"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "last_name=Smith")
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "email=john@smith.com")
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "phone=123456789")
-
 	// basic test
-	req, _ := http.NewRequest("POST", "/make-reservation", strings.NewReader(reqBody))
+	postedData := url.Values{}
+	postedData.Add("first_name", "John")
+	postedData.Add("last_name", "Smith")
+	postedData.Add("email", "john@smith.com")
+	postedData.Add("phone", "123456789")
+	req, _ := http.NewRequest("POST", "/make-reservation", strings.NewReader(postedData.Encode()))
 	ctx := getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -125,7 +125,7 @@ func TestRepository_PostReservation(t *testing.T) {
 	}
 
 	// test for missing reservation in session
-	req, _ = http.NewRequest("POST", "/make-reservation", strings.NewReader(reqBody))
+	req, _ = http.NewRequest("POST", "/make-reservation", strings.NewReader(postedData.Encode()))
 	ctx = getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -150,11 +150,13 @@ func TestRepository_PostReservation(t *testing.T) {
 	}
 
 	// test for invalid data
-	reqBody = "first_name=J"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "last_name=Smith")
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "email=john@smith.com")
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "phone=123456789")
-	req, _ = http.NewRequest("POST", "/make-reservation", strings.NewReader(reqBody))
+	postedData = url.Values{}
+	postedData.Add("first_name", "J")
+	postedData.Add("last_name", "Smith")
+	postedData.Add("email", "john@smith.com")
+	postedData.Add("phone", "123456789")
+
+	req, _ = http.NewRequest("POST", "/make-reservation", strings.NewReader(postedData.Encode()))
 	ctx = getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -167,11 +169,12 @@ func TestRepository_PostReservation(t *testing.T) {
 	}
 
 	// test for failure to insert reservation into database
-	reqBody = "first_name=Invalid"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "last_name=Smith")
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "email=john@smith.com")
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "phone=123456789")
-	req, _ = http.NewRequest("POST", "/make-reservation", strings.NewReader(reqBody))
+	postedData = url.Values{}
+	postedData.Add("first_name", "Invalid")
+	postedData.Add("last_name", "Smith")
+	postedData.Add("email", "john@smith.com")
+	postedData.Add("phone", "123456789")
+	req, _ = http.NewRequest("POST", "/make-reservation", strings.NewReader(postedData.Encode()))
 	ctx = getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -184,11 +187,12 @@ func TestRepository_PostReservation(t *testing.T) {
 	}
 
 	// test for failure to insert restriction into database
-	reqBody = "first_name=John"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "last_name=Smith")
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "email=john@smith.com")
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "phone=123456789")
-	req, _ = http.NewRequest("POST", "/make-reservation", strings.NewReader(reqBody))
+	postedData = url.Values{}
+	postedData.Add("first_name", "John")
+	postedData.Add("last_name", "Smith")
+	postedData.Add("email", "john@smith.com")
+	postedData.Add("phone", "123456789")
+	req, _ = http.NewRequest("POST", "/make-reservation", strings.NewReader(postedData.Encode()))
 	ctx = getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -212,9 +216,10 @@ func TestNewRepo(t *testing.T) {
 
 func TestRepository_PostAvailability(t *testing.T) {
 	// rooms are available
-	reqBody := "start=2040-01-01"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "end=2040-01-02")
-	req, _ := http.NewRequest("POST", "/search-availability", strings.NewReader(reqBody))
+	postedData := url.Values{}
+	postedData.Add("start", "2040-01-01")
+	postedData.Add("end", "2040-01-02")
+	req, _ := http.NewRequest("POST", "/search-availability", strings.NewReader(postedData.Encode()))
 	ctx := getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -226,9 +231,10 @@ func TestRepository_PostAvailability(t *testing.T) {
 	}
 
 	// rooms are not available
-	reqBody = "start=2050-01-01"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "end=2050-01-02")
-	req, _ = http.NewRequest("POST", "/search-availability", strings.NewReader(reqBody))
+	postedData = url.Values{}
+	postedData.Add("start", "2050-01-01")
+	postedData.Add("end", "2050-01-02")
+	req, _ = http.NewRequest("POST", "/search-availability", strings.NewReader(postedData.Encode()))
 	ctx = getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -250,9 +256,10 @@ func TestRepository_PostAvailability(t *testing.T) {
 	}
 
 	// wrong format start date
-	reqBody = "start=invalid"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "end=2040-01-02")
-	req, _ = http.NewRequest("POST", "/search-availability", strings.NewReader(reqBody))
+	postedData = url.Values{}
+	postedData.Add("start", "invalid")
+	postedData.Add("end", "2040-01-02")
+	req, _ = http.NewRequest("POST", "/search-availability", strings.NewReader(postedData.Encode()))
 	ctx = getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -263,9 +270,10 @@ func TestRepository_PostAvailability(t *testing.T) {
 	}
 
 	// wrong format end date
-	reqBody = "start=2040-01-01"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "end=invalid")
-	req, _ = http.NewRequest("POST", "/search-availability", strings.NewReader(reqBody))
+	postedData = url.Values{}
+	postedData.Add("start", "2040-01-01")
+	postedData.Add("end", "invalid")
+	req, _ = http.NewRequest("POST", "/search-availability", strings.NewReader(postedData.Encode()))
 	ctx = getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -276,9 +284,10 @@ func TestRepository_PostAvailability(t *testing.T) {
 	}
 
 	// database query fails
-	reqBody = "start=2060-01-01"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "end=2060-01-02")
-	req, _ = http.NewRequest("POST", "/search-availability", strings.NewReader(reqBody))
+	postedData = url.Values{}
+	postedData.Add("start", "2060-01-01")
+	postedData.Add("end", "2060-01-02")
+	req, _ = http.NewRequest("POST", "/search-availability", strings.NewReader(postedData.Encode()))
 	ctx = getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -292,10 +301,12 @@ func TestRepository_PostAvailability(t *testing.T) {
 
 func TestRepository_AvailabilityJSON(t *testing.T) {
 	// first case is rooms are not available
-	reqBody := "start=2050-01-01"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "end=2050-01-02")
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "room_id=1")
-	req, _ := http.NewRequest("POST", "/search-availability-json", strings.NewReader(reqBody))
+	postedData := url.Values{}
+	postedData.Add("start", "2050-01-01")
+	postedData.Add("end", "2050-01-02")
+	postedData.Add("room_id", "1")
+
+	req, _ := http.NewRequest("POST", "/search-availability-json", strings.NewReader(postedData.Encode()))
 	ctx := getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -313,10 +324,12 @@ func TestRepository_AvailabilityJSON(t *testing.T) {
 	}
 
 	// case rooms are available
-	reqBody = "start=2030-01-01"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "end=2030-01-02")
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "room_id=1")
-	req, _ = http.NewRequest("POST", "/search-availability-json", strings.NewReader(reqBody))
+	postedData = url.Values{}
+	postedData.Add("start", "2030-01-01")
+	postedData.Add("end", "2030-01-02")
+	postedData.Add("room_id", "1")
+
+	req, _ = http.NewRequest("POST", "/search-availability-json", strings.NewReader(postedData.Encode()))
 	ctx = getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
@@ -350,10 +363,11 @@ func TestRepository_AvailabilityJSON(t *testing.T) {
 	}
 
 	// database error
-	reqBody = "start=2060-01-01"
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "end=2060-01-02")
-	reqBody = fmt.Sprintf("%s&%s", reqBody, "room_id=1")
-	req, _ = http.NewRequest("POST", "/search-availability-json", strings.NewReader(reqBody))
+	postedData = url.Values{}
+	postedData.Add("start", "2060-01-01")
+	postedData.Add("end", "2060-01-02")
+	postedData.Add("room_id", "1")
+	req, _ = http.NewRequest("POST", "/search-availability-json", strings.NewReader(postedData.Encode()))
 	ctx = getCtx(req)
 	req = req.WithContext(ctx)
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")

@@ -566,6 +566,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
   `(go test '-coverprofile=coverage.out' ./internal/handlers/.) -and (go tool cover '-html=coverage.out')`
 ### Testing AvailabilityJSON
 ### Completed Handler tests
+### Simplifying adding post parameters
 
 
 
