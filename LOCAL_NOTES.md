@@ -624,6 +624,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
   `soda generate fizz AddProcessedToReservationsTable`
 ### Showing one reservation
 ### Database functions for editing a reservation
+### Editing a reservation
 
 
 
