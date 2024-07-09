@@ -613,6 +613,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 - RoyalUI-Free-Bootstrap-Admin-Template - Free Bootstrap 4 Admin Template
   [GitHub](https://github.com/BootstrapDash/RoyalUI-Free-Bootstrap-Admin-Template)
 ### Convert the admin template into a Go template
+### Important: A note on the admin.layout.tmpl file
 
 
 
