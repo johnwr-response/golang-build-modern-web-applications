@@ -32,6 +32,7 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Get("/reservation-summary", handlers.Repo.ReservationSummary)
 
 	mux.Get("/user/login", handlers.Repo.ShowLogin)
+	mux.Post("/user/login", handlers.Repo.PostShowLogin)
 
 	if !app.InProduction {
 		// This is just to make the git commit check to shut up and will be removed

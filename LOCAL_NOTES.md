@@ -598,7 +598,8 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Create the login screen
 ### Creating the authentication handlers for the login screen
 ### Creating the authentication and user database functions
-
+### Creating our handler to log in
+- Prevent `Session Fixation Attacks` by renewing tokens
 
 
 
