@@ -601,7 +601,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Creating our handler to log in
 - Prevent `Session Fixation Attacks` by renewing tokens
 ### Writing Authentication Middleware
-
+### Adding a user to the database
+- A simple hashed password generator for use when manually inserting users
+  [The Go Playground](https://go.dev/play/p/uKMMCzJWGsW)
 
 
 ## Section: Setting up Secure Backend Administration
