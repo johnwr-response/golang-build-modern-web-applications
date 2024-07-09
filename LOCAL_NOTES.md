@@ -619,6 +619,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Listing all reservations
 - Simple-DataTables - DataTables but in TypeScript transpiled to Vanilla JS. Lightweight, extendable and dependency free
   [GitHub](https://github.com/fiduswriter/simple-datatables)
+### Listing new reservations
+- Generate a migration for seeding rooms in our room table
+  `soda generate fizz AddProcessedToReservationsTable`
 
 
 
