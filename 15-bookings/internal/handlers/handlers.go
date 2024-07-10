@@ -579,6 +579,42 @@ func (m *Repository) AdminReservationsCalendar(w http.ResponseWriter, r *http.Re
 	}
 	data["rooms"] = rooms
 
+	for _, x := range rooms {
+		// create maps
+		reservationMap := make(map[string]int)
+		blockMap := make(map[string]int)
+
+		dateLayout := "2006-01-2"
+		for d := firstOfMonth; d.After(lastOfMonth) == false; d = d.AddDate(0, 0, 1) {
+			reservationMap[d.Format(dateLayout)] = 0
+			blockMap[d.Format(dateLayout)] = 0
+		}
+
+		// get all the restrictions for the current room
+		restrictions, err := m.DB.GetRestrictionsForRoomByDate(x.ID, firstOfMonth, lastOfMonth)
+		if err != nil {
+			helpers.ServerError(w, err)
+			return
+		}
+		for _, y := range restrictions {
+			if y.ReservationID > 0 {
+				// it's a reservation
+				for d := y.StartDate; d.After(y.EndDate) == false; d = d.AddDate(0, 0, 1) {
+					reservationMap[d.Format(dateLayout)] = y.ReservationID
+				}
+			} else {
+				// it,s a block
+				blockMap[y.StartDate.Format(dateLayout)] = y.RestrictionID
+			}
+		}
+		data[fmt.Sprintf("reservation_map_%v", x.ID)] = reservationMap
+		data[fmt.Sprintf("block_map_%v", x.ID)] = blockMap
+
+		// stored in session to easy find changes later
+		m.App.Session.Put(r.Context(), fmt.Sprintf("block_map_%d", x.ID), blockMap)
+
+	}
+
 	_ = render.Template(w, r, "admin-reservations-calendar.page.tmpl", &models.TemplateData{
 		StringMap: stringMap,
 		Data:      data,
