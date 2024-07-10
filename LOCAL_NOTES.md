@@ -626,6 +626,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Database functions for editing a reservation
 ### Editing a reservation
 ### Marking a reservation as processed
+### Deleting a reservation
 
 
 
