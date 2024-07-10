@@ -596,7 +596,6 @@ func (m *Repository) AdminReservationsCalendar(w http.ResponseWriter, r *http.Re
 			helpers.ServerError(w, err)
 			return
 		}
-		log.Println(fmt.Sprintf("size of restrictions : %d", len(restrictions)))
 
 		for _, y := range restrictions {
 			if y.ReservationID > 0 {
@@ -622,6 +621,11 @@ func (m *Repository) AdminReservationsCalendar(w http.ResponseWriter, r *http.Re
 		Data:      data,
 		IntMap:    intMap,
 	})
+}
+
+// AdminPostReservationsCalendar handles post of reservation calendar
+func (m *Repository) AdminPostReservationsCalendar(w http.ResponseWriter, r *http.Request) {
+	log.Println("works")
 }
 
 // AdminProcessReservation marks a reservation as processed
