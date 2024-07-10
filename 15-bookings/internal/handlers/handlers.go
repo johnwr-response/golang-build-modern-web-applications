@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/go-chi/chi/v5"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/config"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/driver"
 	"github.com/johnwr-response/golang-build-modern-web-applications/15-bookings/internal/forms"
@@ -538,4 +539,13 @@ func (m *Repository) AdminPostShowReservation(w http.ResponseWriter, r *http.Req
 // AdminReservationsCalendar displays the reservation calendar
 func (m *Repository) AdminReservationsCalendar(w http.ResponseWriter, r *http.Request) {
 	_ = render.Template(w, r, "admin-reservations-calendar.page.tmpl", &models.TemplateData{})
+}
+
+// AdminProcessReservation marks a reservation as processed
+func (m *Repository) AdminProcessReservation(w http.ResponseWriter, r *http.Request) {
+	id, _ := strconv.Atoi(chi.URLParam(r, "id"))
+	src := chi.URLParam(r, "src")
+	_ = m.DB.UpdateProcessedForReservation(id, 1)
+	m.App.Session.Put(r.Context(), "flash", "Reservation marked as processed")
+	http.Redirect(w, r, fmt.Sprintf("/admin/reservations-%v", src), http.StatusSeeOther)
 }
