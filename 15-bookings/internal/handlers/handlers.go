@@ -596,6 +596,8 @@ func (m *Repository) AdminReservationsCalendar(w http.ResponseWriter, r *http.Re
 			helpers.ServerError(w, err)
 			return
 		}
+		log.Println(fmt.Sprintf("size of restrictions : %d", len(restrictions)))
+
 		for _, y := range restrictions {
 			if y.ReservationID > 0 {
 				// it's a reservation
@@ -604,11 +606,11 @@ func (m *Repository) AdminReservationsCalendar(w http.ResponseWriter, r *http.Re
 				}
 			} else {
 				// it,s a block
-				blockMap[y.StartDate.Format(dateLayout)] = y.RestrictionID
+				blockMap[y.StartDate.Format(dateLayout)] = y.ID
 			}
 		}
-		data[fmt.Sprintf("reservation_map_%v", x.ID)] = reservationMap
-		data[fmt.Sprintf("block_map_%v", x.ID)] = blockMap
+		data[fmt.Sprintf("reservation_map_%d", x.ID)] = reservationMap
+		data[fmt.Sprintf("block_map_%d", x.ID)] = blockMap
 
 		// stored in session to easy find changes later
 		m.App.Session.Put(r.Context(), fmt.Sprintf("block_map_%d", x.ID), blockMap)
