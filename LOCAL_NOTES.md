@@ -677,5 +677,18 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Finishing touches, and fixing a bug
 ### Populating the rest of the pages
 
-
 ## Section: Where to go Next
+### Additional resources
+- Use microservices
+- Some good advice: [11 pointers for embarking on a journey to learn Go](https://ewanvalentine.io/blog/advice-for-new-go-programmers)
+- gRPC : [Go gRPC Beginners Tutorial](https://tutorialedge.net/golang/go-grpc-beginners-tutorial/)
+- Other courses:
+  - [Building Web Applications with Go - Intermediate Level](https://www.udemy.com/course/building-web-applications-with-go-intermediate-level)
+  - [Working with WebSockets in Go](https://www.udemy.com/course/working-with-websockets-in-go)
+  - [Working with Design Patterns in Go](https://www.udemy.com/course/working-with-design-patterns-in-go-golang)
+  - [Working with React and Go](https://www.udemy.com/course/working-with-react-and-go-golang)
+  - [Let's Build a Go version of Laravel](https://www.udemy.com/course/lets-build-a-go-version-of-laravel)
+  - [Let's Build a Go version of Laravel: Part Two](https://www.udemy.com/course/lets-build-a-go-version-of-laravel-part-two)
+  - [Working with Microservices in Go](https://www.udemy.com/course/working-with-microservices-in-go)
+  - [Working with Concurrency in Go](https://www.udemy.com/course/working-with-concurrency-in-go-golang)
+  - [Introduction to Testing in Go](https://www.udemy.com/course/introduction-to-testing-in-go-golang)
