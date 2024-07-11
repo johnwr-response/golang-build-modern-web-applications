@@ -639,6 +639,8 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Updating our tests
 - NOTE: Tests are NOT finished!
   ```(go test '-coverprofile=coverage.out' ./internal/handlers/.) -and (go tool cover '-html=coverage.out')```
+### Fixing a bug missed by our tests
+- Actually different from course content. RoomName was fetched from session, added StartDate and EndDate from there as well in template
 
 
 

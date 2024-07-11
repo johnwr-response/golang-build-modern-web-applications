@@ -10,8 +10,8 @@
                 <p>
                     <strong>Reservation Details</strong><br>
                     Room: {{$res.Room.RoomName}}<br>
-                    Arrival: {{index .StringMap "start_date"}}<br>
-                    Departure: {{index .StringMap "end_date"}}
+                    Arrival: {{humanDate $res.StartDate}}<br>
+                    Departure: {{humanDate $res.EndDate}}
                 </p>
                 <form method="POST" action="" class="needs-no-validation" novalidate="novalidate">
                     <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
