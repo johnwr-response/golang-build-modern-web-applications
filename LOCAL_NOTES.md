@@ -644,10 +644,12 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### A word about the updated tests
 - NOTE: Tests mentioned are NOT finished!
 
-
-
-
 ## Section: Updating our Application to Accept Command Line Parameters
+### Changing our app to use command line flags
+
+
+
+
 ## Section: Deploying our Application to a Server
 ## Section: Finishing Touches
 ## Section: Where to go Next
