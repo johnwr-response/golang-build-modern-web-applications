@@ -666,6 +666,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 - Should not be relevant
 ### Connecting the application to the web server
 ### Setting up Supervisor
+### Writing an update script for the server
 
 
 
