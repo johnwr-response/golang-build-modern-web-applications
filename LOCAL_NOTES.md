@@ -660,6 +660,8 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Add admin user to migrations
 - Generate a migration for seeding users into our users table
   `soda generate sql AddUserToUsersTable`
+### Installing Go on the server, and getting our code up there
+
 
 
 ## Section: Finishing Touches
