@@ -665,6 +665,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### A note about Caddy 2.5.0
 - Should not be relevant
 ### Connecting the application to the web server
+### Setting up Supervisor
 
 
 
