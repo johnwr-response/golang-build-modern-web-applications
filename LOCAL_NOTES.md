@@ -646,6 +646,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 
 ## Section: Updating our Application to Accept Command Line Parameters
 ### Changing our app to use command line flags
+### An alternative: the .env file
+- GoDotEnv - A Go port of Ruby's dotenv library (Loads environment variables from .env files)
+  [GitHub](https://github.com/joho/godotenv)
 
 
 
