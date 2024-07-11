@@ -662,7 +662,8 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
   `soda generate sql AddUserToUsersTable`
 ### Installing Go on the server, and getting our code up there
 ### Setting up the remote database and building the application on our server
-
+### A note about Caddy 2.5.0
+- Should not be relevant
 
 
 ## Section: Finishing Touches
