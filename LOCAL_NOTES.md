@@ -675,6 +675,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 - Note: already done
 ### Updating the footer and page title
 ### Finishing touches, and fixing a bug
+### Populating the rest of the pages
 
 
 ## Section: Where to go Next
