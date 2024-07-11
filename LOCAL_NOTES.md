@@ -670,6 +670,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### A note about sending mail from the live server
 - The send-mail configuration should also be put as command line parameters
 
-
 ## Section: Finishing Touches
+### Updating to Bootstrap 5
+- Note: already done
+
+
 ## Section: Where to go Next
