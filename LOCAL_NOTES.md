@@ -653,8 +653,10 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ## Section: Deploying our Application to a Server
 ### Using vi to edit files on remote server
 - [Linux Tutorial - Vi Cheat Sheet](https://ryanstutorials.net/linuxtutorial/cheatsheetvi.php)
-
-
+### Choosing a server platform
+- Alternative webservers
+  - [nginx](https://nginx.org/en/)
+  - [Caddy](https://caddyserver.com/)
 
 
 ## Section: Finishing Touches
