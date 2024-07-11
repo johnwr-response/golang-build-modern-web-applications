@@ -674,6 +674,7 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Updating to Bootstrap 5
 - Note: already done
 ### Updating the footer and page title
+### Finishing touches, and fixing a bug
 
 
 ## Section: Where to go Next
