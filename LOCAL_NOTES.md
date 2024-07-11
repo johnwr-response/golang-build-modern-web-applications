@@ -664,6 +664,8 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Setting up the remote database and building the application on our server
 ### A note about Caddy 2.5.0
 - Should not be relevant
+### Connecting the application to the web server
+
 
 
 ## Section: Finishing Touches
