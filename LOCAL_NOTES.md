@@ -636,7 +636,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Handling Calendar changes III
 ### Handling Calendar changes IV
 ### Fixing our redirects
-
+### Updating our tests
+- NOTE: Tests are NOT finished!
+  ```(go test '-coverprofile=coverage.out' ./internal/handlers/.) -and (go tool cover '-html=coverage.out')```
 
 
 
