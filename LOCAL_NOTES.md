@@ -657,6 +657,9 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 - Alternative webservers
   - [nginx](https://nginx.org/en/)
   - [Caddy](https://caddyserver.com/)
+### Add admin user to migrations
+- Generate a migration for seeding users into our users table
+  `soda generate sql AddUserToUsersTable`
 
 
 ## Section: Finishing Touches
