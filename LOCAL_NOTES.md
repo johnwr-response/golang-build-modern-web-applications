@@ -667,7 +667,8 @@ INSERT INTO restrictions(restriction_name, created_at, updated_at) VALUES('Owner
 ### Connecting the application to the web server
 ### Setting up Supervisor
 ### Writing an update script for the server
-
+### A note about sending mail from the live server
+- The send-mail configuration should also be put as command line parameters
 
 
 ## Section: Finishing Touches
